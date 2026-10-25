@@ -16,7 +16,7 @@ Use two **sub-domains of the same domain** (e.g. `phonics.example.com` and `api.
    `postgres://postgres:PASSWORD@phonics-db-xxxx:5432/postgres`. The API uses this internal URL; the database is never exposed to the internet.
 
 ## 2. Deploy the API
-1. **+ New → Application** → same Git repository, branch `main`.
+1. **+ New → Application** → Public Repository `https://github.com/pintuwat/Interactive_app4KIDs`, branch `main`.
 2. **Build Pack: Dockerfile**, **Base Directory: `/server`**, **Dockerfile location: `/Dockerfile`**, **Port: `3000`**.
 3. **Domains:** `https://api.example.com` (HTTPS is mandatory; the API refuses plain http in production).
 4. **Environment variables** (Coolify → Environment Variables; never commit them):

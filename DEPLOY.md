@@ -18,16 +18,15 @@ docker build -t ollie-phonics .
 docker run --rm -p 8080:80 ollie-phonics
 ```
 
-## 1. Push the code
-```bash
-git remote add origin <your-repo-url>
-git push -u origin main
-```
-Do **not** commit secrets. Phase 1 has none.
+## 1. The code is on GitHub
+Repository: **https://github.com/pintuwat/Interactive_app4KIDs** (public, branch `main`).
+Every push runs the **docker** workflow (GitHub → Actions): it builds both images for amd64 **and** arm64 and smoke-tests them, so a green tick means Coolify can build them too.
+Do **not** commit secrets. Phase 1 has none; Phase 2 secrets go in Coolify environment variables.
 
 ## 2. Create the application in Coolify
-1. **Projects → (your project) → + New → Application**.
-2. Choose your Git source and repository, branch `main`.
+1. **Projects → (your project) → + New → Application** → **Public Repository**.
+2. Repository URL `https://github.com/pintuwat/Interactive_app4KIDs`, branch `main`.
+   (For auto-deploy on every push, connect it through Coolify's **GitHub App** source instead, or add the deploy webhook from Coolify to the GitHub repo.)
 3. **Build Pack: Dockerfile** (the `Dockerfile` is in the repository root).
 4. **Ports Exposes: `80`**.
 5. Leave "Base Directory" as `/`.
