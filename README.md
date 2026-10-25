@@ -44,7 +44,7 @@ tools/                build + check scripts (see below)
 
 ## Editing content
 All lesson content is JSON in `/data`; no content is hard-coded in the UI.
-- **Letters / sounds**: `data/letters.json` (`tts` is the respelling the device voice says for the sound, e.g. `"sss"`, `"buh"`; tune it, or better, record real audio). US/UK differences use `{ "us": …, "gb": … }` (e.g. Z = zee/zed) and words flagged `"diff"`.
+- **Letters / sounds**: `data/letters.json` (`tts` is the spelling the device voice says for the sound, e.g. `"hmm"` for /m/, `"buh"` for /b/). Never use repeated letters like `mmm`/`sss`: voices read them as letter names. After changing one, run `python3 tools/voice-check.py` on a Mac; better still, record real audio. US/UK differences use `{ "us": …, "gb": … }` (e.g. Z = zee/zed) and words flagged `"diff"`.
 - **Words**: `data/words.json`. **Spoken instructions**: `data/prompts.json` (max 6 words).
 - **Stories**: edit `tools/stories-source.py`, then
   ```bash
@@ -65,6 +65,7 @@ Missing files fall back to the device voice in the same accent. Recording only o
 | `node tools/validate-data.mjs` | checks all data files (26 letters, 60+ CVC words, story sizes, prompts ≤ 6 words …) |
 | `node tools/check-stories.mjs` | decodability check + teacher review list |
 | `node tools/contrast.mjs` | WCAG colour contrast of the UI colour pairs |
+| `python3 tools/voice-check.py` | macOS: checks the US/UK voices SAY each letter sound instead of spelling it ("mmm" → "em em em") |
 | `node tools/build-audio-manifest.mjs` | lists recordings in `audio/manifest.json` |
 | `node tools/build-precache.mjs` | offline file list + cache version (the Docker build runs this) |
 | `node tools/offline-test.mjs` | real headless Chrome: installs the service worker, goes offline, checks the app |

@@ -83,24 +83,37 @@ export function render(root, params, app) {
     let m;
     while ((m = re.exec(p.text))) starts.push([m.index, m.index + m[0].length]);
     let gotBoundary = false;
+    let timed = false;
     const mark = (i) => { if (id !== run) return; els.forEach((e, k) => e.classList.toggle('hl', k === i)); };
-    const startTimed = (duration) => {
-      if (gotBoundary || id !== run) return;
+    // Fallback when the voice sends no word events (many Android voices, recorded audio):
+    // spread the highlight over the expected duration, measured from when the sound started.
+    const startTimed = (t0, duration) => {
+      if (gotBoundary || timed || id !== run) return;
+      timed = true;
       const weights = tokens.map((t) => t.length + 2 + (/[.,!?]$/.test(t) ? 3 : 0));
       const total = weights.reduce((a, b) => a + b, 0);
+      const elapsed = Date.now() - t0;
       let at = 0;
       tokens.forEach((_, i) => {
-        timers.push(setTimeout(() => { if (!gotBoundary) mark(i); }, (at / total) * duration * 0.92));
+        const when = (at / total) * duration * 0.92 - elapsed;
+        timers.push(setTimeout(() => { if (!gotBoundary) mark(i); }, Math.max(0, when)));
         at += weights[i];
       });
     };
+    const called = Date.now();
+    const estimate = Math.max(1500, (p.text.length * 95) / audio.STORY_RATE);
+    // If the voice never reports that it started, assume it started right away.
+    timers.push(setTimeout(() => startTimed(called, estimate), 1200));
     await audio.storyText(story.id, page + 1, p.text, {
       onBoundary: (ci) => {
         gotBoundary = true;
         const i = starts.findIndex(([a, b]) => ci >= a && ci < b);
         if (i >= 0) mark(i);
       },
-      onStart: ({ duration }) => { timers.push(setTimeout(() => startTimed(duration), 700)); },
+      onStart: ({ duration }) => {
+        const t0 = Date.now();
+        timers.push(setTimeout(() => startTimed(t0, duration || estimate), 600)); // give word events 600 ms to arrive
+      },
     });
     if (id !== run || !alive) return;
     els.forEach((e) => e.classList.remove('hl'));

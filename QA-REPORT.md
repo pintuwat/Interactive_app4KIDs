@@ -39,6 +39,15 @@ Date: 2026-10-25. Scope: everything in this repository. **Not yet tested on a re
 7. Deleting a profile on one tablet would also erase the child's class record → now only an explicit "Erase online data" does that.
 8. Decodability rules were too generous for vowel + r/w/y (bird, farm, slow) → tightened; stories re-checked.
 
+## Letter sounds and device voices (update after the first deployment)
+Reported: M and N "echo / say three times". Measured with Apple's US (Samantha) and UK (Daniel) voices, the same voices iPad/iPhone/Mac browsers use:
+the old spellings were read as letter NAMES, e.g. `mmm` gave exactly the same audio as "em em em", `nnn` as "en en en", `sss` as "ess ess ess",
+`ks` as "kay ess", `ih` (short i) as "eye", and the UK voice read `zzz` as "zed zed zed": **32 problems** in total.
+All 41 sounds now use spellings that both voices say once (`hmm`, `un`, `psst`, `hih`, `ucks`, `cuh`, `ruh`, `fuh`, `shh` …):
+`python3 tools/voice-check.py` reports none left. Lessons now open with the sound only (tap the big letter for the name).
+Device voices still add a little vowel ("fuh", "cuh") and Android voices were not measured, so recording your own sounds
+(`record-audio.html`, about 10 minutes for the 41 sounds) is still the best fix. Recording needs **https** (the microphone is blocked on http).
+
 ## Not verified here (please check)
 - **Real tablets** (iPad Safari, Android Chrome): speech voices, audio unlock on first tap, touch dragging, add-to-home-screen.
 - **Speech quality of isolated sounds**: device voices may still say "ay" for /a/. Respellings are tunable in `data/letters.json`; recording your own audio fixes it for good.

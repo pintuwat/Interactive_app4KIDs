@@ -68,13 +68,15 @@ export function render(root, params, app) {
     return { x: e.clientX - r.left, y: e.clientY - r.top };
   }
   ink.addEventListener('pointerdown', (e) => {
-    drawing = true; ink.setPointerCapture(e.pointerId); last = pos(e);
+    drawing = true;
+    last = pos(e);
+    try { ink.setPointerCapture(e.pointerId); } catch { /* some browsers refuse capture: drawing still works */ }
     const ctx = ink.getContext('2d');
     ctx.fillStyle = color; ctx.beginPath(); ctx.arc(last.x, last.y, 13, 0, Math.PI * 2); ctx.fill();
     e.preventDefault();
   });
   ink.addEventListener('pointermove', (e) => {
-    if (!drawing) return;
+    if (!drawing || !last) return;
     const p = pos(e);
     const ctx = ink.getContext('2d');
     ctx.strokeStyle = color; ctx.lineWidth = 26; ctx.lineCap = 'round'; ctx.lineJoin = 'round';

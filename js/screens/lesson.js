@@ -86,8 +86,6 @@ export function render(root, params, app) {
     h('div', { class: 'word-cards' }, cards),
     h('div', { class: 'lesson-actions' }, traceBtn, compare, nextBtn)));
 
-  setTimeout(async () => {
-    await audio.letterName(item);
-    await audio.sound(item);
-  }, 350);
+  // Sounds first (phonics): opening a lesson plays the SOUND only; tap the big letter for its name.
+  setTimeout(() => audio.sound(item), 350);
 }
