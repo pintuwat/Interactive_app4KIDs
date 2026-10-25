@@ -117,7 +117,7 @@ export function render(root, params, app) {
     color = c; swatches.forEach((s, i) => s.setAttribute('aria-pressed', String(COLORS[i] === c)));
   } }));
 
-  const caseBtn = item.kind === 'letter' && h('button', { class: 'btn btn-small', type: 'button', onclick: () => { upper = !upper; caseBtn.textContent = upper ? 'a' : 'A'; clear(); drawGuide(); } }, 'a');
+  const caseBtn = item.kind === 'letter' && h('button', { class: 'btn', type: 'button', onclick: () => { upper = !upper; caseBtn.textContent = upper ? 'a' : 'A'; clear(); drawGuide(); } }, 'a');
 
   const done = h('button', { class: 'btn btn-primary', type: 'button', onclick: finish }, '✔ Done');
   const clearBtn = h('button', { class: 'btn', type: 'button', onclick: () => { app.sfx.tap(); clear(); } }, '↺ Clear');

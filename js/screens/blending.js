@@ -1,16 +1,18 @@
 // Blending lessons (CVC). /words = pick a family; /blend/:family = blend each word.
 import { h, pic, sleep, burst } from '../util.js';
-import { data, letterById } from '../data.js';
+import { data, letterById, levelOf } from '../data.js';
 import * as progress from '../progress.js';
 import { starsFor } from '../progress.js';
 
 export async function render(root, params, app) {
+  if (!levelOf(progress.currentProfile()).words) { app.nav('/'); return; }
   if (!params.family) return families(root, app);
   return blend(root, params.family, app);
 }
 
 function families(root, app) {
   app.header({ title: 'Words', back: '/' });
+  if (levelOf(progress.currentProfile()).extras) root.append(h('div', { class: 'row', style: { marginBottom: '16px' } }, h('a', { class: 'btn btn-sun', href: '#/sight' }, '👀 Sight words')));
   root.append(h('div', { class: 'family-grid' }, data.families.map((f) => {
     const ws = data.words.filter((w) => w.f === f.id);
     const done = ws.filter((w) => starsFor('word', w.w) > 0).length;

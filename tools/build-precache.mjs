@@ -6,7 +6,7 @@ import { join, relative, sep, extname } from 'node:path';
 import { createHash } from 'node:crypto';
 import { fileURLToPath } from 'node:url';
 
-const SKIP_DIRS = new Set(['node_modules', 'server', 'tools', 'Requirement', 'audio', '.git', '.claude']);
+const SKIP_DIRS = new Set(['node_modules', 'server', 'tools', 'Requirement', 'audio', '.git', '.claude', 'dist']);
 const SKIP_FILES = new Set(['precache.json', 'service-worker.js', 'env.js', 'Dockerfile', 'nginx.conf', '.DS_Store', '.gitignore', '.dockerignore', 'security-headers.conf']);
 const EXT = new Set(['.html', '.css', '.js', '.json', '.svg', '.png', '.jpg', '.webp', '.ico', '.woff2']);
 

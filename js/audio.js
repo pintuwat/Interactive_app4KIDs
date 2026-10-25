@@ -95,7 +95,7 @@ export const audio = {
   sound(item, o = {}) { return this.play({ id: `sound-${item.id}`, text: item.tts, rate: KID_RATE * 0.9, ...o }); },
   letterName(item, o = {}) { return this.play({ id: `name-${item.id}`, text: item.name, rate: KID_RATE, ...o }); },
   word(w, o = {}) { return this.play({ id: `word-${w.toLowerCase()}`, text: w, rate: KID_RATE, ...o }); },
-  sight(w, o = {}) { return this.play({ id: `sight-${w.toLowerCase()}`, text: w, rate: KID_RATE, ...o }); },
+  sight(w, o = {}) { return this.play({ id: `word-${w.toLowerCase()}`, text: w, rate: KID_RATE, ...o }); },
   prompt(key, o = {}) {
     const text = data.prompts[key];
     if (!text) return Promise.resolve();

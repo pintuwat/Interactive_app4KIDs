@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
+  <title>Record audio - Ollie's Phonics</title>
+  <link rel="icon" href="assets/icons/icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/teacher.css">
+  <style>
+    .rec-current { text-align: center; }
+    .rec-say { font-size: 2.4rem; font-weight: 900; margin: 10px 0; line-height: 1.3; }
+    .rec-btn { min-width: 180px; min-height: 84px; font-size: 1.6rem; }
+    .rec-btn.on { background: #c0392b; color: #fff; animation: pulse 1s infinite; }
+    .rec-list { max-height: 55vh; overflow-y: auto; }
+    .rec-row { display: flex; gap: 10px; align-items: center; padding: 6px 0; border-bottom: 1px solid var(--line); }
+    .rec-row code { font-size: .8rem; color: var(--ink-soft); min-width: 190px; }
+    .rec-row .say { flex: 1; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+    .st-ok { color: #1b8a4b; font-weight: 900; } .st-new { color: #1c7ed6; font-weight: 900; } .st-miss { color: #c0392b; font-weight: 900; }
+    .meter { height: 14px; background: var(--bg2); border-radius: 999px; overflow: hidden; width: min(420px, 100%); margin: 8px auto; }
+    .meter i { display: block; height: 100%; width: 0; background: var(--leaf); transition: width .05s; }
+  </style>
+  <script src="env.js"></script>
+</head>
+<body class="teacher">
+  <header class="t-bar"><a class="btn btn-small" href="index.html">← Ollie's Phonics</a><h1>🎙 Record audio</h1></header>
+  <main id="app"><p class="loading">Loading…</p></main>
+  <script type="module" src="js/recorder/recorder.js"></script>
+</body>
+</html>

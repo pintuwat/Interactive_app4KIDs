@@ -24,8 +24,8 @@ export function render(root, _params, app) {
             h('span', { class: 'avatar', 'aria-hidden': 'true' }, p.avatar), h('span', { class: 'pname' }, p.name)),
           h('div', { class: 'row', style: { gap: '8px' } },
             flagButton(p),
-            cloudConfigured() && h('button', { class: 'btn btn-small', type: 'button', 'aria-label': `Join a class as ${p.name}`, onclick: () => { progress.selectProfile(p.id); app.nav('/join'); } }, p.cloud && !p.cloud.invalid ? '🏫✔' : '🏫'),
-            h('button', { class: 'btn btn-small', type: 'button', 'aria-label': `Edit ${p.name}`, onclick: () => { mode = { edit: p.id }; draw(); } }, '✏️')))),
+            cloudConfigured() && h('button', { class: 'btn', type: 'button', 'aria-label': `Join a class as ${p.name}`, onclick: () => { progress.selectProfile(p.id); app.nav('/join'); } }, p.cloud && !p.cloud.invalid ? '🏫✔' : '🏫'),
+            h('button', { class: 'btn', type: 'button', 'aria-label': `Edit ${p.name}`, onclick: () => { mode = { edit: p.id }; draw(); } }, '✏️')))),
         progress.profiles().length < MAX_PROFILES && h('button', { class: 'profile-card add', type: 'button', 'aria-label': 'Add a new friend', onclick: () => { mode = { edit: 'new' }; draw(); } },
           h('span', { class: 'avatar', 'aria-hidden': 'true' }, '➕'), h('span', { class: 'pname' }, 'New'))),
     ));
@@ -33,7 +33,7 @@ export function render(root, _params, app) {
   }
 
   function flagButton(p) {
-    const b = h('button', { class: 'btn btn-small', type: 'button', 'aria-label': `Accent: ${p.accent === 'gb' ? 'British' : 'American'}. Tap to change.`, onclick: () => {
+    const b = h('button', { class: 'btn', type: 'button', 'aria-label': `Accent: ${p.accent === 'gb' ? 'British' : 'American'}. Tap to change.`, onclick: () => {
       const next = p.accent === 'gb' ? 'us' : 'gb';
       progress.updateProfile(p.id, { accent: next });
       if (progress.currentProfile()?.id === p.id) app.audio.setAccent(next);

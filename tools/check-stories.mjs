@@ -9,6 +9,7 @@ const sight = new Set(meta.sight.map((w) => w.toLowerCase()));
 let bad = 0;
 
 for (const [i, s] of stories.entries()) {
+  const sightS = new Set([...sight, ...(s.extraSight || [])]);
   const dec = new Map(), sig = new Map(), diff = new Map(), fail = new Map(), tgt = new Set();
   let n = 0;
   for (const [pi, p] of s.pages.entries()) {
@@ -16,7 +17,7 @@ for (const [i, s] of stories.entries()) {
       const w = clean(raw);
       if (!w) continue;
       n++;
-      if (sight.has(w)) { sig.set(w, (sig.get(w) || 0) + 1); continue; }
+      if (sightS.has(w)) { sig.set(w, (sig.get(w) || 0) + 1); continue; }
       if (isDecodable(w, s.taught)) {
         dec.set(w, (dec.get(w) || 0) + 1);
         if (isTarget(w, s.target)) tgt.add(w);

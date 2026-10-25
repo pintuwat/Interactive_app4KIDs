@@ -80,11 +80,12 @@ function onRecord(profile, type, id, item) {
   timer = setTimeout(flushAll, FLUSH_DELAY);
 }
 
-async function onProfileRemoved(profile) {
+// Deleting a profile on ONE device must not erase the child's class record (they may use another tablet).
+// Erasing online data is an explicit action in the Parent corner (eraseCloud).
+function onProfileRemoved(profile) {
   const box = readBox();
   delete box[profile.id];
   writeBox(box);
-  if (profile.cloud) { try { await api('/api/me', { method: 'DELETE', token: profile.cloud.token }); } catch { /* offline: teacher can delete */ } }
 }
 
 export async function pull(profile) {

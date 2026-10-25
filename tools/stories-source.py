@@ -8,6 +8,8 @@ def q(prompt, answer, *wrong):
     """Picture question: answer is (emoji, label); wrong are (emoji, label)."""
     return {"q": prompt, "choices": [{"e": answer[0], "t": answer[1]}] + [{"e": e, "t": t} for e, t in wrong], "answer": 0}
 
+BASE = ["a", "i", "e", "o", "u", "sh", "ch", "th", "oo", "a_e", "i_e", "o_e", "u_e", "ai"]
+
 STORIES = [
  dict(id="cat-on-the-mat", title="The Cat on the Mat", emoji="🐱", level=1, focus="short a", target="a", taught=["a"],
   pages=[
@@ -129,6 +131,128 @@ STORIES = [
   ],
   questions=[q("Who has a snail?", ("👧", "Gail"), ("👦", "Tom"), ("🐶", "Dot")),
              q("What is in the rain?", ("🚂", "train"), ("🚢", "ship"), ("🚌", "bus"))]),
+
+ # ---- Phase 3: ten more stories for ages 7-8 (level 3). extraSight = extra sight words allowed in that story only. ----
+ dict(id="stan-the-snail", title="Stan the Snail", emoji="🐌", level=3, focus="st blend", target="st", taught=BASE, extraSight=["go"],
+  pages=[
+   ("🐌", "Stan is a snail. Stan sits on a stone. The stone is flat and still."),
+   ("🌿", "Stan has a plan. Stan will step up the stem. Step, step, step. Stan is not fast, but Stan is not stuck."),
+   ("🌧️", "Splish, splash! It rains. Stan stops. Stan sits in his shell and waits."),
+   ("☀️", "The rain stops. The sun is up. Stan is snug in his shell. The stem is wet."),
+   ("🌿🐌", "Stan steps up the stem. Step, step, step. Stan is at the top. Stan is glad."),
+   ("🌙🐌", "Stan sits at the top. The moon is up. Stan is still. Stan naps in his shell."),
+  ],
+  questions=[q("Who is on the stone?", ("🐌", "snail"), ("🐸", "frog"), ("🐛", "bug")),
+             q("What does Stan sit in?", ("🐚", "shell"), ("☕", "mug"), ("🎩", "hat")),
+             q("What comes up at the end?", ("🌙", "moon"), ("🌧️", "rain"), ("🚂", "train"))]),
+
+ dict(id="blot-the-frog", title="Blot the Black Frog", emoji="🐸", level=3, focus="bl blend", target="bl", taught=BASE, extraSight=[],
+  pages=[
+   ("🐸", "Blake has a black frog. The frog is Blot. Blot is a blob of black."),
+   ("🧱🐸", "Blot sits on a block. The block is flat. Blot can blink and blink."),
+   ("🪵🐸", "Blot hops on the log. Blot hops in the bog. Blot gets wet. Blot is not glad."),
+   ("🛏️", "Blake gets a blanket. Blake dabs Blot with the blanket. Blot is snug and glad."),
+   ("😌🐸", "Blot sits on the blanket. Blot blinks and blinks. Blake pats Blot."),
+   ("🌙😴", "The moon is up. Blake has a nap. Blot has a nap on the blanket. Blot is black and still."),
+  ],
+  questions=[q("What color is Blot?", ("⚫", "black"), ("🔴", "red"), ("🟡", "yellow")),
+             q("What did Blake get?", ("🛏️", "blanket"), ("🎂", "cake"), ("🥄", "spoon"))]),
+
+ dict(id="trip-on-the-tram", title="The Trip on the Tram", emoji="🚋", level=3, focus="tr blend", target="tr", taught=BASE, extraSight=["they", "for"],
+  pages=[
+   ("🚋", "Trish and Trent get on a tram. It is a trip! The tram is on a track."),
+   ("🧳", "Trent has a trunk. Trish has a tin. The trunk is on the tram."),
+   ("🛤️", "The tram stops. Trish and Trent hop off. They trot up the path."),
+   ("👵", "Gran is at the end of the path. Gran has a big hug for Trish and Trent."),
+   ("🍪", "Trish and Trent have a snack. Trent has a bun. Trish has a plum."),
+   ("😴🚋", "Trish and Trent nap on the tram. Clack, clack, clack. The trip ends."),
+  ],
+  questions=[q("What did they ride?", ("🚋", "tram"), ("🚌", "bus"), ("🚢", "ship")),
+             q("Who met them?", ("👵", "Gran"), ("👸", "queen"), ("🧑‍🍳", "chef"))]),
+
+ dict(id="three-sheep", title="Three Sheep", emoji="🐑", level=3, focus="ee", target="ee", taught=BASE + ["ee"], extraSight=["by", "are"],
+  pages=[
+   ("🐑🐑🐑", "Three sheep sleep on the green hill. Sleep, sleep, sleep."),
+   ("🐝", "A bee zips by the sheep. Bzz, bzz, bzz. The sheep feel the bee."),
+   ("🌳", "The sheep seek a tree. The tree is deep in the grass. The sheep sit and rest."),
+   ("🍃", "The breeze is cool. The sheep feel the breeze. The bee sits on a seed."),
+   ("🐝🌳", "The bee is in the tree. Soon the bee is still. The sheep keep still."),
+   ("🌙😴", "The moon is up. The sheep sleep. The bee sleeps in the tree. Sleep, sleep, sleep."),
+  ],
+  questions=[q("How many sheep?", ("3️⃣", "three"), ("🔟", "ten"), ("6️⃣", "six")),
+             q("Where did the bee sleep?", ("🌳", "tree"), ("🪣", "pail"), ("🏠", "house"))]),
+
+ dict(id="goat-in-the-boat", title="The Goat in the Boat", emoji="🐐", level=3, focus="oa", target="oa", taught=BASE + ["ee", "oa"], extraSight=["have", "they"],
+  pages=[
+   ("🐐⛵", "A goat is in a boat. The boat is on a pond. The boat can float."),
+   ("🧥🐸", "The goat has a red coat. A toad sits on the boat. The toad is green."),
+   ("💬", "The toad and the goat chat. Croak, croak! The toad is glad. The goat is glad."),
+   ("💦", "Splash! The boat rocks. The goat gets wet. The toad gets wet. They soak and soak."),
+   ("🧼🛁", "The goat has soap. The goat has a bath on the bank. The toad has a bath, then the goat."),
+   ("🌙⛵", "The goat and the toad rest on the boat. The moon is up. The boat floats. Rest, rest, rest."),
+  ],
+  questions=[q("What floats on the pond?", ("⛵", "boat"), ("🚌", "bus"), ("🛏️", "bed")),
+             q("Who sat with the goat?", ("🐸", "toad"), ("🐱", "cat"), ("🐷", "pig"))]),
+
+ dict(id="night-light", title="The Night Light", emoji="💡", level=3, focus="igh", target="igh", taught=BASE + ["ee", "oa", "igh"], extraSight=["have"],
+  pages=[
+   ("🌙", "It is night. Kim is in bed. Dad has a light. The light is bright."),
+   ("😨", "Kim has a fright. A big shape is on the shelf! It is not a cat."),
+   ("👨", "Dad runs in. Dad sits on the bed. Dad has a light."),
+   ("🔦", "Dad lifts the light up high. The light shines on the shelf."),
+   ("🎒", "It is a bag on the shelf, not a big shape! Kim is glad. Kim grins."),
+   ("😴", "Dad kisses Kim. Dad switches the light off. Kim sleeps tight. Night, night."),
+  ],
+  questions=[q("What did Dad have?", ("💡", "light"), ("🥄", "spoon"), ("🎩", "hat")),
+             q("What was on the shelf?", ("🎒", "bag"), ("🐱", "cat"), ("🐍", "snake"))]),
+
+ dict(id="farm-cart", title="The Farm Cart", emoji="🚜", level=3, focus="ar", target="ar", taught=BASE + ["ee", "oa", "igh", "ar"], extraSight=["are"],
+  pages=[
+   ("🏡", "Mark has a farm. The farm has a barn and a yard."),
+   ("🛒", "A cart is in the yard. The cart is big. Mark can park the cart in the barn."),
+   ("⭐", "It is dark. A star is up. Mark sits on the cart. Mark has a jar."),
+   ("🍯", "The jar has jam. Mark has jam on a bun. Yum, yum, yum!"),
+   ("🐱", "A cat is in the barn. Mark pats the cat. The cat is smart and soft."),
+   ("🌙😴", "The moon and the stars are up. The farm is still. Mark and the cat nap in the barn."),
+  ],
+  questions=[q("What does Mark have?", ("🏡", "farm"), ("🚢", "ship"), ("🏰", "castle")),
+             q("What is in the jar?", ("🍯", "jam"), ("🥛", "milk"), ("🐛", "bug"))]),
+
+ dict(id="storm-and-fort", title="The Storm and the Fort", emoji="⛈️", level=3, focus="or", target="or", taught=BASE + ["ee", "oa", "igh", "ar", "or"], extraSight=["they"],
+  pages=[
+   ("👨", "Norm is a short man with a horn. Norm has a fork."),
+   ("🌽", "Norm has corn. Norm gets a cob of corn. Norm sits and munches."),
+   ("⛈️", "A storm is north of the fort. Norm and Mort sit in the fort."),
+   ("📯", "Norm toots his horn. Toot, toot! The storm is not glad."),
+   ("🏰", "Norm and Mort munch corn. They sit in the fort. The storm is soft and soft."),
+   ("🌙😴", "The storm ends. The moon is up. Norm and Mort nap in the fort."),
+  ],
+  questions=[q("What does Norm blow?", ("📯", "horn"), ("🥄", "spoon"), ("🪁", "kite")),
+             q("What did they munch?", ("🌽", "corn"), ("🍕", "pizza"), ("🐟", "fish"))]),
+
+ dict(id="bird-and-girl", title="The Bird and the Girl", emoji="🐦", level=3, focus="ir ur er", target="ir|ur|er", taught=BASE + ["ee", "oa", "igh", "ar", "or", "ir", "ur", "er"], extraSight=["her", "are", "little"],
+  pages=[
+   ("👧🐦", "Shirl has a bird. The bird is Burt. Burt is a little bird."),
+   ("🎵", "Burt can chirp. Burt can flutter. Burt can hop on the sill."),
+   ("🖐️🐦", "Shirl lifts Burt up. Burt flaps and flutters. Shirl sits still."),
+   ("🌽", "Burt gets a bit of corn. Shirl stirs the milk. Burt sips the milk."),
+   ("🪺", "Burt is in his nest. Shirl pats her bird. Burt purrs and chirps."),
+   ("🌙😴", "The moon is up. Shirl is in bed. Burt is in the nest. Burt and Shirl nap."),
+  ],
+  questions=[q("What is Burt?", ("🐦", "bird"), ("🐱", "cat"), ("🐸", "frog")),
+             q("Where does Burt sleep?", ("🪺", "nest"), ("🛁", "bath"), ("🚌", "bus"))]),
+
+ dict(id="cow-in-town", title="The Cow in the Town", emoji="🐮", level=3, focus="ow ou", target="ow|ou", taught=BASE + ["ee", "oa", "igh", "ar", "or", "ir", "ur", "er", "ow", "ou"], extraSight=["they", "are"],
+  pages=[
+   ("🐮", "A brown cow is in the town. The cow sits down."),
+   ("👥", "A crowd is in the town. The crowd is loud. The cow is not loud."),
+   ("🐭🏠", "A mouse is in the house. The mouse is out! The mouse runs down the road."),
+   ("📢", "The cow shouts, Moo! The mouse jumps. The crowd shouts and shouts."),
+   ("🐮🐭", "The cow and the mouse sit down. They are not loud now."),
+   ("🌙😴", "The moon is up. The town is still. The cow and the mouse nap. Hush, hush, hush."),
+  ],
+  questions=[q("What color is the cow?", ("🟤", "brown"), ("🔴", "red"), ("🟡", "yellow")),
+             q("Who ran out of the house?", ("🐭", "mouse"), ("🐷", "pig"), ("🐔", "hen"))]),
 ]
 
 out = {"meta": {"sight": SIGHT, "ending": "Good night!", "note": "The closing 'Good night!' is a spoken farewell, shown separately from the story text and not counted for decodability."}, "stories": []}

@@ -64,7 +64,7 @@ Check from your own computer: `curl -I https://phonics.example.com` should answe
 Push to Git and press **Deploy** again (or enable Coolify's auto-deploy webhook). Every build changes the cache version, so tablets pick up the new version the next time they open the app online (close and reopen the app once).
 
 ## 6. Adding your recorded audio (Phase 3)
-Record with `https://phonics.example.com/record-audio.html`, unzip the download into `audio/us/` and `audio/gb/`, run `node tools/build-audio-manifest.mjs`, commit and deploy. Missing files fall back to the tablet's built-in voice.
+Record with `https://phonics.example.com/record-audio.html` (WAV files), unzip the download into `audio/` (the zip contains `us/` or `gb/`), run `node tools/build-audio-manifest.mjs`, commit and deploy. Missing files fall back to the tablet's built-in voice.
 
 ## 7. Troubleshooting
 | Problem | Fix |

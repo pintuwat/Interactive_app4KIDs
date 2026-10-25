@@ -11,7 +11,7 @@ export function render(root, params, app) {
   document.body.dataset.theme = 'night';
   app.header({ title: story.title, back: '/stories' });
   const { audio } = app;
-  const sight = new Set(data.storyMeta.sight.map((w) => w.toLowerCase()));
+  const sight = new Set([...data.storyMeta.sight, ...(story.extraSight || [])].map((w) => w.toLowerCase()));
   let alive = true;
   let run = 0;          // cancels stale narration
   let mode = null;      // 'listen' | 'read'

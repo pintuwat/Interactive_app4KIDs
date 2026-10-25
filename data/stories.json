@@ -855,6 +855,981 @@
     }
    ],
    "words": 80
+  },
+  {
+   "id": "stan-the-snail",
+   "title": "Stan the Snail",
+   "emoji": "🐌",
+   "level": 3,
+   "focus": "st blend",
+   "target": "st",
+   "taught": [
+    "a",
+    "i",
+    "e",
+    "o",
+    "u",
+    "sh",
+    "ch",
+    "th",
+    "oo",
+    "a_e",
+    "i_e",
+    "o_e",
+    "u_e",
+    "ai"
+   ],
+   "extraSight": [
+    "go"
+   ],
+   "questions": [
+    {
+     "q": "Who is on the stone?",
+     "choices": [
+      {
+       "e": "🐌",
+       "t": "snail"
+      },
+      {
+       "e": "🐸",
+       "t": "frog"
+      },
+      {
+       "e": "🐛",
+       "t": "bug"
+      }
+     ],
+     "answer": 0
+    },
+    {
+     "q": "What does Stan sit in?",
+     "choices": [
+      {
+       "e": "🐚",
+       "t": "shell"
+      },
+      {
+       "e": "☕",
+       "t": "mug"
+      },
+      {
+       "e": "🎩",
+       "t": "hat"
+      }
+     ],
+     "answer": 0
+    },
+    {
+     "q": "What comes up at the end?",
+     "choices": [
+      {
+       "e": "🌙",
+       "t": "moon"
+      },
+      {
+       "e": "🌧️",
+       "t": "rain"
+      },
+      {
+       "e": "🚂",
+       "t": "train"
+      }
+     ],
+     "answer": 0
+    }
+   ],
+   "pages": [
+    {
+     "scene": "🐌",
+     "text": "Stan is a snail. Stan sits on a stone. The stone is flat and still."
+    },
+    {
+     "scene": "🌿",
+     "text": "Stan has a plan. Stan will step up the stem. Step, step, step. Stan is not fast, but Stan is not stuck."
+    },
+    {
+     "scene": "🌧️",
+     "text": "Splish, splash! It rains. Stan stops. Stan sits in his shell and waits."
+    },
+    {
+     "scene": "☀️",
+     "text": "The rain stops. The sun is up. Stan is snug in his shell. The stem is wet."
+    },
+    {
+     "scene": "🌿🐌",
+     "text": "Stan steps up the stem. Step, step, step. Stan is at the top. Stan is glad."
+    },
+    {
+     "scene": "🌙🐌",
+     "text": "Stan sits at the top. The moon is up. Stan is still. Stan naps in his shell."
+    }
+   ],
+   "words": 100
+  },
+  {
+   "id": "blot-the-frog",
+   "title": "Blot the Black Frog",
+   "emoji": "🐸",
+   "level": 3,
+   "focus": "bl blend",
+   "target": "bl",
+   "taught": [
+    "a",
+    "i",
+    "e",
+    "o",
+    "u",
+    "sh",
+    "ch",
+    "th",
+    "oo",
+    "a_e",
+    "i_e",
+    "o_e",
+    "u_e",
+    "ai"
+   ],
+   "extraSight": [],
+   "questions": [
+    {
+     "q": "What color is Blot?",
+     "choices": [
+      {
+       "e": "⚫",
+       "t": "black"
+      },
+      {
+       "e": "🔴",
+       "t": "red"
+      },
+      {
+       "e": "🟡",
+       "t": "yellow"
+      }
+     ],
+     "answer": 0
+    },
+    {
+     "q": "What did Blake get?",
+     "choices": [
+      {
+       "e": "🛏️",
+       "t": "blanket"
+      },
+      {
+       "e": "🎂",
+       "t": "cake"
+      },
+      {
+       "e": "🥄",
+       "t": "spoon"
+      }
+     ],
+     "answer": 0
+    }
+   ],
+   "pages": [
+    {
+     "scene": "🐸",
+     "text": "Blake has a black frog. The frog is Blot. Blot is a blob of black."
+    },
+    {
+     "scene": "🧱🐸",
+     "text": "Blot sits on a block. The block is flat. Blot can blink and blink."
+    },
+    {
+     "scene": "🪵🐸",
+     "text": "Blot hops on the log. Blot hops in the bog. Blot gets wet. Blot is not glad."
+    },
+    {
+     "scene": "🛏️",
+     "text": "Blake gets a blanket. Blake dabs Blot with the blanket. Blot is snug and glad."
+    },
+    {
+     "scene": "😌🐸",
+     "text": "Blot sits on the blanket. Blot blinks and blinks. Blake pats Blot."
+    },
+    {
+     "scene": "🌙😴",
+     "text": "The moon is up. Blake has a nap. Blot has a nap on the blanket. Blot is black and still."
+    }
+   ],
+   "words": 93
+  },
+  {
+   "id": "trip-on-the-tram",
+   "title": "The Trip on the Tram",
+   "emoji": "🚋",
+   "level": 3,
+   "focus": "tr blend",
+   "target": "tr",
+   "taught": [
+    "a",
+    "i",
+    "e",
+    "o",
+    "u",
+    "sh",
+    "ch",
+    "th",
+    "oo",
+    "a_e",
+    "i_e",
+    "o_e",
+    "u_e",
+    "ai"
+   ],
+   "extraSight": [
+    "they",
+    "for"
+   ],
+   "questions": [
+    {
+     "q": "What did they ride?",
+     "choices": [
+      {
+       "e": "🚋",
+       "t": "tram"
+      },
+      {
+       "e": "🚌",
+       "t": "bus"
+      },
+      {
+       "e": "🚢",
+       "t": "ship"
+      }
+     ],
+     "answer": 0
+    },
+    {
+     "q": "Who met them?",
+     "choices": [
+      {
+       "e": "👵",
+       "t": "Gran"
+      },
+      {
+       "e": "👸",
+       "t": "queen"
+      },
+      {
+       "e": "🧑‍🍳",
+       "t": "chef"
+      }
+     ],
+     "answer": 0
+    }
+   ],
+   "pages": [
+    {
+     "scene": "🚋",
+     "text": "Trish and Trent get on a tram. It is a trip! The tram is on a track."
+    },
+    {
+     "scene": "🧳",
+     "text": "Trent has a trunk. Trish has a tin. The trunk is on the tram."
+    },
+    {
+     "scene": "🛤️",
+     "text": "The tram stops. Trish and Trent hop off. They trot up the path."
+    },
+    {
+     "scene": "👵",
+     "text": "Gran is at the end of the path. Gran has a big hug for Trish and Trent."
+    },
+    {
+     "scene": "🍪",
+     "text": "Trish and Trent have a snack. Trent has a bun. Trish has a plum."
+    },
+    {
+     "scene": "😴🚋",
+     "text": "Trish and Trent nap on the tram. Clack, clack, clack. The trip ends."
+    }
+   ],
+   "words": 88
+  },
+  {
+   "id": "three-sheep",
+   "title": "Three Sheep",
+   "emoji": "🐑",
+   "level": 3,
+   "focus": "ee",
+   "target": "ee",
+   "taught": [
+    "a",
+    "i",
+    "e",
+    "o",
+    "u",
+    "sh",
+    "ch",
+    "th",
+    "oo",
+    "a_e",
+    "i_e",
+    "o_e",
+    "u_e",
+    "ai",
+    "ee"
+   ],
+   "extraSight": [
+    "by",
+    "are"
+   ],
+   "questions": [
+    {
+     "q": "How many sheep?",
+     "choices": [
+      {
+       "e": "3️⃣",
+       "t": "three"
+      },
+      {
+       "e": "🔟",
+       "t": "ten"
+      },
+      {
+       "e": "6️⃣",
+       "t": "six"
+      }
+     ],
+     "answer": 0
+    },
+    {
+     "q": "Where did the bee sleep?",
+     "choices": [
+      {
+       "e": "🌳",
+       "t": "tree"
+      },
+      {
+       "e": "🪣",
+       "t": "pail"
+      },
+      {
+       "e": "🏠",
+       "t": "house"
+      }
+     ],
+     "answer": 0
+    }
+   ],
+   "pages": [
+    {
+     "scene": "🐑🐑🐑",
+     "text": "Three sheep sleep on the green hill. Sleep, sleep, sleep."
+    },
+    {
+     "scene": "🐝",
+     "text": "A bee zips by the sheep. Bzz, bzz, bzz. The sheep feel the bee."
+    },
+    {
+     "scene": "🌳",
+     "text": "The sheep seek a tree. The tree is deep in the grass. The sheep sit and rest."
+    },
+    {
+     "scene": "🍃",
+     "text": "The breeze is cool. The sheep feel the breeze. The bee sits on a seed."
+    },
+    {
+     "scene": "🐝🌳",
+     "text": "The bee is in the tree. Soon the bee is still. The sheep keep still."
+    },
+    {
+     "scene": "🌙😴",
+     "text": "The moon is up. The sheep sleep. The bee sleeps in the tree. Sleep, sleep, sleep."
+    }
+   ],
+   "words": 87
+  },
+  {
+   "id": "goat-in-the-boat",
+   "title": "The Goat in the Boat",
+   "emoji": "🐐",
+   "level": 3,
+   "focus": "oa",
+   "target": "oa",
+   "taught": [
+    "a",
+    "i",
+    "e",
+    "o",
+    "u",
+    "sh",
+    "ch",
+    "th",
+    "oo",
+    "a_e",
+    "i_e",
+    "o_e",
+    "u_e",
+    "ai",
+    "ee",
+    "oa"
+   ],
+   "extraSight": [
+    "have",
+    "they"
+   ],
+   "questions": [
+    {
+     "q": "What floats on the pond?",
+     "choices": [
+      {
+       "e": "⛵",
+       "t": "boat"
+      },
+      {
+       "e": "🚌",
+       "t": "bus"
+      },
+      {
+       "e": "🛏️",
+       "t": "bed"
+      }
+     ],
+     "answer": 0
+    },
+    {
+     "q": "Who sat with the goat?",
+     "choices": [
+      {
+       "e": "🐸",
+       "t": "toad"
+      },
+      {
+       "e": "🐱",
+       "t": "cat"
+      },
+      {
+       "e": "🐷",
+       "t": "pig"
+      }
+     ],
+     "answer": 0
+    }
+   ],
+   "pages": [
+    {
+     "scene": "🐐⛵",
+     "text": "A goat is in a boat. The boat is on a pond. The boat can float."
+    },
+    {
+     "scene": "🧥🐸",
+     "text": "The goat has a red coat. A toad sits on the boat. The toad is green."
+    },
+    {
+     "scene": "💬",
+     "text": "The toad and the goat chat. Croak, croak! The toad is glad. The goat is glad."
+    },
+    {
+     "scene": "💦",
+     "text": "Splash! The boat rocks. The goat gets wet. The toad gets wet. They soak and soak."
+    },
+    {
+     "scene": "🧼🛁",
+     "text": "The goat has soap. The goat has a bath on the bank. The toad has a bath, then the goat."
+    },
+    {
+     "scene": "🌙⛵",
+     "text": "The goat and the toad rest on the boat. The moon is up. The boat floats. Rest, rest, rest."
+    }
+   ],
+   "words": 103
+  },
+  {
+   "id": "night-light",
+   "title": "The Night Light",
+   "emoji": "💡",
+   "level": 3,
+   "focus": "igh",
+   "target": "igh",
+   "taught": [
+    "a",
+    "i",
+    "e",
+    "o",
+    "u",
+    "sh",
+    "ch",
+    "th",
+    "oo",
+    "a_e",
+    "i_e",
+    "o_e",
+    "u_e",
+    "ai",
+    "ee",
+    "oa",
+    "igh"
+   ],
+   "extraSight": [
+    "have"
+   ],
+   "questions": [
+    {
+     "q": "What did Dad have?",
+     "choices": [
+      {
+       "e": "💡",
+       "t": "light"
+      },
+      {
+       "e": "🥄",
+       "t": "spoon"
+      },
+      {
+       "e": "🎩",
+       "t": "hat"
+      }
+     ],
+     "answer": 0
+    },
+    {
+     "q": "What was on the shelf?",
+     "choices": [
+      {
+       "e": "🎒",
+       "t": "bag"
+      },
+      {
+       "e": "🐱",
+       "t": "cat"
+      },
+      {
+       "e": "🐍",
+       "t": "snake"
+      }
+     ],
+     "answer": 0
+    }
+   ],
+   "pages": [
+    {
+     "scene": "🌙",
+     "text": "It is night. Kim is in bed. Dad has a light. The light is bright."
+    },
+    {
+     "scene": "😨",
+     "text": "Kim has a fright. A big shape is on the shelf! It is not a cat."
+    },
+    {
+     "scene": "👨",
+     "text": "Dad runs in. Dad sits on the bed. Dad has a light."
+    },
+    {
+     "scene": "🔦",
+     "text": "Dad lifts the light up high. The light shines on the shelf."
+    },
+    {
+     "scene": "🎒",
+     "text": "It is a bag on the shelf, not a big shape! Kim is glad. Kim grins."
+    },
+    {
+     "scene": "😴",
+     "text": "Dad kisses Kim. Dad switches the light off. Kim sleeps tight. Night, night."
+    }
+   ],
+   "words": 84
+  },
+  {
+   "id": "farm-cart",
+   "title": "The Farm Cart",
+   "emoji": "🚜",
+   "level": 3,
+   "focus": "ar",
+   "target": "ar",
+   "taught": [
+    "a",
+    "i",
+    "e",
+    "o",
+    "u",
+    "sh",
+    "ch",
+    "th",
+    "oo",
+    "a_e",
+    "i_e",
+    "o_e",
+    "u_e",
+    "ai",
+    "ee",
+    "oa",
+    "igh",
+    "ar"
+   ],
+   "extraSight": [
+    "are"
+   ],
+   "questions": [
+    {
+     "q": "What does Mark have?",
+     "choices": [
+      {
+       "e": "🏡",
+       "t": "farm"
+      },
+      {
+       "e": "🚢",
+       "t": "ship"
+      },
+      {
+       "e": "🏰",
+       "t": "castle"
+      }
+     ],
+     "answer": 0
+    },
+    {
+     "q": "What is in the jar?",
+     "choices": [
+      {
+       "e": "🍯",
+       "t": "jam"
+      },
+      {
+       "e": "🥛",
+       "t": "milk"
+      },
+      {
+       "e": "🐛",
+       "t": "bug"
+      }
+     ],
+     "answer": 0
+    }
+   ],
+   "pages": [
+    {
+     "scene": "🏡",
+     "text": "Mark has a farm. The farm has a barn and a yard."
+    },
+    {
+     "scene": "🛒",
+     "text": "A cart is in the yard. The cart is big. Mark can park the cart in the barn."
+    },
+    {
+     "scene": "⭐",
+     "text": "It is dark. A star is up. Mark sits on the cart. Mark has a jar."
+    },
+    {
+     "scene": "🍯",
+     "text": "The jar has jam. Mark has jam on a bun. Yum, yum, yum!"
+    },
+    {
+     "scene": "🐱",
+     "text": "A cat is in the barn. Mark pats the cat. The cat is smart and soft."
+    },
+    {
+     "scene": "🌙😴",
+     "text": "The moon and the stars are up. The farm is still. Mark and the cat nap in the barn."
+    }
+   ],
+   "words": 94
+  },
+  {
+   "id": "storm-and-fort",
+   "title": "The Storm and the Fort",
+   "emoji": "⛈️",
+   "level": 3,
+   "focus": "or",
+   "target": "or",
+   "taught": [
+    "a",
+    "i",
+    "e",
+    "o",
+    "u",
+    "sh",
+    "ch",
+    "th",
+    "oo",
+    "a_e",
+    "i_e",
+    "o_e",
+    "u_e",
+    "ai",
+    "ee",
+    "oa",
+    "igh",
+    "ar",
+    "or"
+   ],
+   "extraSight": [
+    "they"
+   ],
+   "questions": [
+    {
+     "q": "What does Norm blow?",
+     "choices": [
+      {
+       "e": "📯",
+       "t": "horn"
+      },
+      {
+       "e": "🥄",
+       "t": "spoon"
+      },
+      {
+       "e": "🪁",
+       "t": "kite"
+      }
+     ],
+     "answer": 0
+    },
+    {
+     "q": "What did they munch?",
+     "choices": [
+      {
+       "e": "🌽",
+       "t": "corn"
+      },
+      {
+       "e": "🍕",
+       "t": "pizza"
+      },
+      {
+       "e": "🐟",
+       "t": "fish"
+      }
+     ],
+     "answer": 0
+    }
+   ],
+   "pages": [
+    {
+     "scene": "👨",
+     "text": "Norm is a short man with a horn. Norm has a fork."
+    },
+    {
+     "scene": "🌽",
+     "text": "Norm has corn. Norm gets a cob of corn. Norm sits and munches."
+    },
+    {
+     "scene": "⛈️",
+     "text": "A storm is north of the fort. Norm and Mort sit in the fort."
+    },
+    {
+     "scene": "📯",
+     "text": "Norm toots his horn. Toot, toot! The storm is not glad."
+    },
+    {
+     "scene": "🏰",
+     "text": "Norm and Mort munch corn. They sit in the fort. The storm is soft and soft."
+    },
+    {
+     "scene": "🌙😴",
+     "text": "The storm ends. The moon is up. Norm and Mort nap in the fort."
+    }
+   ],
+   "words": 80
+  },
+  {
+   "id": "bird-and-girl",
+   "title": "The Bird and the Girl",
+   "emoji": "🐦",
+   "level": 3,
+   "focus": "ir ur er",
+   "target": "ir|ur|er",
+   "taught": [
+    "a",
+    "i",
+    "e",
+    "o",
+    "u",
+    "sh",
+    "ch",
+    "th",
+    "oo",
+    "a_e",
+    "i_e",
+    "o_e",
+    "u_e",
+    "ai",
+    "ee",
+    "oa",
+    "igh",
+    "ar",
+    "or",
+    "ir",
+    "ur",
+    "er"
+   ],
+   "extraSight": [
+    "her",
+    "are",
+    "little"
+   ],
+   "questions": [
+    {
+     "q": "What is Burt?",
+     "choices": [
+      {
+       "e": "🐦",
+       "t": "bird"
+      },
+      {
+       "e": "🐱",
+       "t": "cat"
+      },
+      {
+       "e": "🐸",
+       "t": "frog"
+      }
+     ],
+     "answer": 0
+    },
+    {
+     "q": "Where does Burt sleep?",
+     "choices": [
+      {
+       "e": "🪺",
+       "t": "nest"
+      },
+      {
+       "e": "🛁",
+       "t": "bath"
+      },
+      {
+       "e": "🚌",
+       "t": "bus"
+      }
+     ],
+     "answer": 0
+    }
+   ],
+   "pages": [
+    {
+     "scene": "👧🐦",
+     "text": "Shirl has a bird. The bird is Burt. Burt is a little bird."
+    },
+    {
+     "scene": "🎵",
+     "text": "Burt can chirp. Burt can flutter. Burt can hop on the sill."
+    },
+    {
+     "scene": "🖐️🐦",
+     "text": "Shirl lifts Burt up. Burt flaps and flutters. Shirl sits still."
+    },
+    {
+     "scene": "🌽",
+     "text": "Burt gets a bit of corn. Shirl stirs the milk. Burt sips the milk."
+    },
+    {
+     "scene": "🪺",
+     "text": "Burt is in his nest. Shirl pats her bird. Burt purrs and chirps."
+    },
+    {
+     "scene": "🌙😴",
+     "text": "The moon is up. Shirl is in bed. Burt is in the nest. Burt and Shirl nap."
+    }
+   ],
+   "words": 80
+  },
+  {
+   "id": "cow-in-town",
+   "title": "The Cow in the Town",
+   "emoji": "🐮",
+   "level": 3,
+   "focus": "ow ou",
+   "target": "ow|ou",
+   "taught": [
+    "a",
+    "i",
+    "e",
+    "o",
+    "u",
+    "sh",
+    "ch",
+    "th",
+    "oo",
+    "a_e",
+    "i_e",
+    "o_e",
+    "u_e",
+    "ai",
+    "ee",
+    "oa",
+    "igh",
+    "ar",
+    "or",
+    "ir",
+    "ur",
+    "er",
+    "ow",
+    "ou"
+   ],
+   "extraSight": [
+    "they",
+    "are"
+   ],
+   "questions": [
+    {
+     "q": "What color is the cow?",
+     "choices": [
+      {
+       "e": "🟤",
+       "t": "brown"
+      },
+      {
+       "e": "🔴",
+       "t": "red"
+      },
+      {
+       "e": "🟡",
+       "t": "yellow"
+      }
+     ],
+     "answer": 0
+    },
+    {
+     "q": "Who ran out of the house?",
+     "choices": [
+      {
+       "e": "🐭",
+       "t": "mouse"
+      },
+      {
+       "e": "🐷",
+       "t": "pig"
+      },
+      {
+       "e": "🐔",
+       "t": "hen"
+      }
+     ],
+     "answer": 0
+    }
+   ],
+   "pages": [
+    {
+     "scene": "🐮",
+     "text": "A brown cow is in the town. The cow sits down."
+    },
+    {
+     "scene": "👥",
+     "text": "A crowd is in the town. The crowd is loud. The cow is not loud."
+    },
+    {
+     "scene": "🐭🏠",
+     "text": "A mouse is in the house. The mouse is out! The mouse runs down the road."
+    },
+    {
+     "scene": "📢",
+     "text": "The cow shouts, Moo! The mouse jumps. The crowd shouts and shouts."
+    },
+    {
+     "scene": "🐮🐭",
+     "text": "The cow and the mouse sit down. They are not loud now."
+    },
+    {
+     "scene": "🌙😴",
+     "text": "The moon is up. The town is still. The cow and the mouse nap. Hush, hush, hush."
+    }
+   ],
+   "words": 83
   }
  ]
 }

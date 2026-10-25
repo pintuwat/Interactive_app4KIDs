@@ -2,7 +2,7 @@
  * - Precaches the whole app (list in precache.json, version stamped by tools/build-precache.mjs) so it works offline.
  * - Audio recordings live in a separate cache; the page asks us to fetch the child's accent first.
  * - Never touches cross-origin requests (the Phase 2 API) or non-GET requests. */
-const VERSION = 'ad0a499710';
+const VERSION = 'aee107d80d';
 const APP_CACHE = 'kp-app-' + VERSION;
 const AUDIO_CACHE = 'kp-audio';
 const NETWORK_FIRST = ['precache.json', 'env.js', 'audio/manifest.json'];
