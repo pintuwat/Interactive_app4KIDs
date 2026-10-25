@@ -1,0 +1,31 @@
+/* Teacher dashboard: ordinary scrolling page, text can be selected. */
+body.teacher { display: block; overflow: auto; user-select: text; -webkit-user-select: text; font-size: 17px; padding: 0 0 40px; }
+.t-bar { display: flex; align-items: center; gap: 14px; padding: 12px 18px; flex-wrap: wrap; }
+.t-bar h1 { flex: 1; margin: 0; font-size: 1.4rem; }
+#app { max-width: 1100px; margin: 0 auto; padding: 0 18px; display: flex; flex-direction: column; gap: 18px; outline: none; }
+.t-card { background: var(--card); border-radius: var(--radius); padding: 18px 22px; box-shadow: var(--shadow); }
+.t-card h2 { margin: 0 0 10px; font-size: 1.3rem; }
+.t-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 14px; }
+.t-class { text-decoration: none; color: var(--ink); cursor: pointer; border: 0; text-align: left; font: inherit; }
+.t-code { font-size: 2.4rem; font-weight: 900; letter-spacing: .18em; color: var(--primary); font-family: ui-monospace, "SF Mono", Menlo, monospace; }
+.t-tiles { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 12px; }
+.t-tile { background: var(--bg2); border-radius: 18px; padding: 12px 16px; }
+.t-tile b { display: block; font-size: 1.7rem; }
+.t-table-wrap { overflow-x: auto; }
+table.t { width: 100%; border-collapse: collapse; font-size: 1rem; }
+table.t th, table.t td { padding: 8px 10px; text-align: left; border-bottom: 1px solid var(--line); white-space: nowrap; }
+table.t th { font-size: .85rem; text-transform: uppercase; letter-spacing: .04em; color: var(--ink-soft); }
+.t-form { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; }
+.t-form .field { min-width: 220px; }
+textarea.field { min-height: 120px; width: min(420px, 100%); }
+.t-msg { padding: 10px 14px; border-radius: 14px; font-weight: 700; }
+.t-msg.err { background: #fde2e0; color: #7a1f17; }
+.t-msg.ok { background: #d8f3dc; color: #14532d; }
+.t-chips { display: flex; flex-wrap: wrap; gap: 8px; }
+.t-chip { background: var(--bg2); border-radius: 999px; padding: 4px 14px; font-weight: 800; }
+.t-note { font-size: .95rem; color: var(--ink-soft); }
+@media print {
+  body.teacher > *:not(#app) { display: none !important; }
+  .t-card:not(.t-printable) { display: none !important; }
+  #app { max-width: none; }
+}

@@ -16,6 +16,7 @@ const routes = [
   ['/map', 'map'],
   ['/stickers', 'stickers'],
   ['/parent', 'parent'],
+  ['/join', 'join'],
 ];
 
 const compiled = routes.map(([pattern, screen]) => {

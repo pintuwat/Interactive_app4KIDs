@@ -2,6 +2,7 @@ import { h } from '../util.js';
 import * as progress from '../progress.js';
 import { AVATARS, MAX_PROFILES } from '../progress.js';
 import { t } from '../i18n.js';
+import { cloudConfigured } from '../config.js';
 
 export function render(root, _params, app) {
   app.header({ title: '', back: progress.currentProfile() ? '/' : false, hide: !progress.currentProfile() });
@@ -23,6 +24,7 @@ export function render(root, _params, app) {
             h('span', { class: 'avatar', 'aria-hidden': 'true' }, p.avatar), h('span', { class: 'pname' }, p.name)),
           h('div', { class: 'row', style: { gap: '8px' } },
             flagButton(p),
+            cloudConfigured() && h('button', { class: 'btn btn-small', type: 'button', 'aria-label': `Join a class as ${p.name}`, onclick: () => { progress.selectProfile(p.id); app.nav('/join'); } }, p.cloud && !p.cloud.invalid ? '🏫✔' : '🏫'),
             h('button', { class: 'btn btn-small', type: 'button', 'aria-label': `Edit ${p.name}`, onclick: () => { mode = { edit: p.id }; draw(); } }, '✏️')))),
         progress.profiles().length < MAX_PROFILES && h('button', { class: 'profile-card add', type: 'button', 'aria-label': 'Add a new friend', onclick: () => { mode = { edit: 'new' }; draw(); } },
           h('span', { class: 'avatar', 'aria-hidden': 'true' }, '➕'), h('span', { class: 'pname' }, 'New'))),
@@ -40,7 +42,7 @@ export function render(root, _params, app) {
     } }, label(p.accent));
     return b;
   }
-  const label = (a) => (a === 'gb' ? '🇬🇧 UK' : '🇺🇸 US');
+  function label(a) { return a === 'gb' ? '🇬🇧 UK' : '🇺🇸 US'; }
 
   function choose(p) {
     app.sfx.tap();
