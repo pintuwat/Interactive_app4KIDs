@@ -1,0 +1,97 @@
+# Builds both Docker images for amd64 AND arm64 (Oracle Ampere) on every push, then smoke-tests them.
+# Nothing is published: Coolify builds the images itself from this repository.
+name: docker
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  checks:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 22 }
+      - run: node tools/validate-data.mjs
+      - run: node tools/check-stories.mjs
+      - run: node tools/contrast.mjs
+      - run: npm ci && npm test
+        working-directory: server
+
+  web:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: docker/setup-qemu-action@v3
+      - uses: docker/setup-buildx-action@v3
+      - name: Build web image (amd64 + arm64)
+        uses: docker/build-push-action@v6
+        with:
+          context: .
+          platforms: linux/amd64,linux/arm64
+          push: false
+      - name: Build web image for the smoke test
+        uses: docker/build-push-action@v6
+        with:
+          context: .
+          load: true
+          tags: phonics-web:test
+      - name: Smoke test (nginx config, MIME types, cache headers, env.js)
+        run: |
+          docker run -d --name web -p 8080:80 -e API_URL=https://api.example.com phonics-web:test
+          for i in $(seq 1 30); do curl -fs http://localhost:8080/ >/dev/null && break; sleep 1; done
+          set -x
+          curl -fsI http://localhost:8080/ | grep -i '200 OK'
+          curl -fsI http://localhost:8080/js/app.js | grep -iE 'content-type: (application|text)/javascript'
+          curl -fsI http://localhost:8080/manifest.json | grep -i 'content-type: application/manifest+json'
+          curl -fsI http://localhost:8080/service-worker.js | grep -i 'cache-control: no-cache, no-store'
+          curl -fsI http://localhost:8080/css/style.css | grep -i 'content-security-policy'
+          curl -fs http://localhost:8080/env.js | grep 'https://api.example.com'
+          curl -fs http://localhost:8080/precache.json | grep '"version"'
+          curl -fs http://localhost:8080/data/stories.json >/dev/null
+          test "$(curl -s -o /dev/null -w '%{http_code}' http://localhost:8080/server/src/app.js)" = "404"
+          test "$(curl -s -o /dev/null -w '%{http_code}' http://localhost:8080/README.md)" = "404"
+      - if: failure()
+        run: docker logs web || true
+
+  api:
+    runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgres:16-alpine
+        env: { POSTGRES_PASSWORD: test, POSTGRES_DB: phonics }
+        ports: ['5432:5432']
+        options: --health-cmd pg_isready --health-interval 2s --health-retries 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: docker/setup-qemu-action@v3
+      - uses: docker/setup-buildx-action@v3
+      - name: Build API image (amd64 + arm64)
+        uses: docker/build-push-action@v6
+        with:
+          context: server
+          platforms: linux/amd64,linux/arm64
+          push: false
+      - name: Build API image for the smoke test
+        uses: docker/build-push-action@v6
+        with:
+          context: server
+          load: true
+          tags: phonics-api:test
+      - name: Smoke test against a real PostgreSQL
+        run: |
+          docker run -d --name api --network host \
+            -e NODE_ENV=production -e ALLOW_INSECURE=true \
+            -e DATABASE_URL=postgres://postgres:test@127.0.0.1:5432/phonics \
+            -e JWT_SECRET=ci-only-secret-ci-only-secret-ci-only-1234 \
+            -e CORS_ORIGIN=https://phonics.example.com phonics-api:test
+          for i in $(seq 1 30); do curl -fs http://localhost:3000/api/health && break; sleep 1; done
+          set -x
+          curl -fs http://localhost:3000/api/health | grep '"ok":true'
+          curl -fs -X POST http://localhost:3000/api/teacher/register -H 'Content-Type: application/json' \
+            -d '{"email":"ci@example.com","password":"ci-password-123"}' | grep 'ci@example.com'
+      - if: failure()
+        run: docker logs api || true

@@ -5,3 +5,4 @@ dist
 Requirement
 .DS_Store
 *.log
+.github
