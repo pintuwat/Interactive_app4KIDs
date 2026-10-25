@@ -49,13 +49,21 @@ jobs:
           curl -fsI http://localhost:8080/manifest.json | grep -i 'content-type: application/manifest+json'
           curl -fsI http://localhost:8080/service-worker.js | grep -i 'cache-control: no-cache, no-store'
           curl -fsI http://localhost:8080/css/style.css | grep -i 'content-security-policy'
+          curl -fsI http://localhost:8080/teacher.html | grep -i "connect-src 'self' https://api.example.com;"
           curl -fs http://localhost:8080/env.js | grep 'https://api.example.com'
           curl -fs http://localhost:8080/precache.json | grep '"version"'
           curl -fs http://localhost:8080/data/stories.json >/dev/null
           test "$(curl -s -o /dev/null -w '%{http_code}' http://localhost:8080/server/src/app.js)" = "404"
           test "$(curl -s -o /dev/null -w '%{http_code}' http://localhost:8080/README.md)" = "404"
+      - name: Guest mode (no API_URL) keeps the policy strict
+        run: |
+          docker run -d --name guest -p 8081:80 phonics-web:test
+          for i in $(seq 1 30); do curl -fs http://localhost:8081/ >/dev/null && break; sleep 1; done
+          curl -fsI http://localhost:8081/ | grep -i "connect-src 'self';"
+          curl -fs http://localhost:8081/env.js | grep 'apiUrl: ""'
+          ! curl -fsI http://localhost:8081/ | grep -q '__API_ORIGIN__'
       - if: failure()
-        run: docker logs web || true
+        run: docker logs web || true; docker logs guest || true
 
   api:
     runs-on: ubuntu-latest
