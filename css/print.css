@@ -1,0 +1,26 @@
+/* Printable worksheets (A4). Everything except #print-root is hidden when printing. */
+#print-root { display: none; }
+@media print {
+  @page { size: A4 portrait; margin: 12mm; }
+  html, body { height: auto; overflow: visible; background: #fff !important; display: block; font-size: 14pt; color: #000; }
+  body > *:not(#print-root) { display: none !important; }
+  #print-root { display: block; }
+  .ws { font-family: Arial, sans-serif; }
+  .ws-head { display: flex; justify-content: space-between; align-items: baseline; border-bottom: 2px solid #000; margin-bottom: 10mm; }
+  .ws-head h1 { font-size: 22pt; margin: 0 0 3mm; }
+  .ws-row { display: flex; align-items: center; gap: 2mm; height: 36mm; border-bottom: 1px dashed #aaa; }
+  .ws-row .ws-model, .ws-row .ws-cell { flex: 1; height: 30mm; }
+  .ws-row .ws-cell { border-bottom: 1px solid #bbb; }
+  .ws-letter { width: 100%; height: 100%; }
+  .ws-pic { width: 24mm; text-align: center; font-size: 28pt; }
+  .ws-pic small { display: block; font-size: 10pt; }
+  .ws-pic .pic-svg { width: 18mm; height: 18mm; }
+  .ws-match { display: flex; justify-content: space-between; gap: 60mm; margin-top: 8mm; }
+  .ws-col { display: flex; flex-direction: column; gap: 10mm; flex: 1; }
+  .ws-item { display: flex; align-items: center; gap: 6mm; font-size: 34pt; height: 28mm; }
+  .ws-item.right { justify-content: flex-start; font-size: 28pt; }
+  .ws-item .pic-svg { width: 24mm; height: 24mm; }
+  .ws-item:not(.right) { justify-content: space-between; }
+  .ws-dot { width: 7mm; height: 7mm; border: 2px solid #000; border-radius: 50%; display: inline-block; }
+  .ws-foot { margin-top: 10mm; font-size: 12pt; color: #333; }
+}

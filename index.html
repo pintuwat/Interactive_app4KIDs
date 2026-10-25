@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no">
+  <meta name="theme-color" content="#1b7f73">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="Ollie Phonics">
+  <title>Ollie's Phonics</title>
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" href="assets/icons/icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/print.css">
+  <script src="env.js"></script>
+</head>
+<body data-theme="day">
+  <header id="topbar" hidden>
+    <button id="btn-back" class="icon-btn" type="button" aria-label="Back">&#8592;</button>
+    <h1 id="title"></h1>
+    <div id="topright">
+      <a id="btn-stars" class="chip" href="#/stickers" aria-label="Stars"><span aria-hidden="true">⭐</span> <b id="stars">0</b></a>
+      <button id="btn-profile" class="icon-btn avatar-btn" type="button" aria-label="Change player"></button>
+    </div>
+  </header>
+  <main id="screen" tabindex="-1"><p class="loading">Loading&hellip;</p></main>
+  <div id="overlay" aria-live="polite"></div>
+  <noscript><p style="padding:2rem;font:20px sans-serif">Please turn on JavaScript to play.</p></noscript>
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>

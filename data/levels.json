@@ -1,0 +1,65 @@
+{
+ "_readme": "Level sets what a child profile sees. 'all' (default) shows everything. games = game ids allowed. stories = max story level. extras = show extra sounds (digraphs, blends, long vowels). words = show blending.",
+ "levels": {
+  "1": {
+   "name": "Level 1",
+   "ages": "3-4",
+   "focus": "Letters and sounds",
+   "words": false,
+   "games": [
+    "listen-tap",
+    "beginning-sound",
+    "bubble-pop"
+   ],
+   "stories": 1,
+   "extras": false
+  },
+  "2": {
+   "name": "Level 2",
+   "ages": "5-6",
+   "focus": "CVC blending",
+   "words": true,
+   "games": [
+    "listen-tap",
+    "beginning-sound",
+    "bubble-pop",
+    "build-word",
+    "rhyme-match"
+   ],
+   "stories": 2,
+   "extras": false
+  },
+  "3": {
+   "name": "Level 3",
+   "ages": "7-8",
+   "focus": "Digraphs, magic e, story reading",
+   "words": true,
+   "games": [
+    "listen-tap",
+    "beginning-sound",
+    "bubble-pop",
+    "build-word",
+    "rhyme-match",
+    "sight-words"
+   ],
+   "stories": 3,
+   "extras": true
+  },
+  "all": {
+   "name": "All",
+   "ages": "3-8",
+   "focus": "Everything",
+   "words": true,
+   "games": [
+    "listen-tap",
+    "beginning-sound",
+    "bubble-pop",
+    "build-word",
+    "rhyme-match",
+    "sight-words"
+   ],
+   "stories": 3,
+   "extras": true
+  }
+ }
+}

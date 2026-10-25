@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" role="img" aria-label="rug">
+  <ellipse cx="60" cy="64" rx="52" ry="34" fill="#6d9dc5"/>
+  <ellipse cx="60" cy="64" rx="40" ry="25" fill="#9ad1d4"/>
+  <ellipse cx="60" cy="64" rx="26" ry="15" fill="#f6e3a1"/>
+  <ellipse cx="60" cy="64" rx="12" ry="6" fill="#e76f51"/>
+  <g stroke="#6d9dc5" stroke-width="4" stroke-linecap="round"><path d="M8 64h-5M112 64h5"/></g>
+</svg>

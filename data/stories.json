@@ -1,0 +1,860 @@
+{
+ "meta": {
+  "sight": [
+   "the",
+   "a",
+   "is",
+   "on",
+   "in",
+   "and",
+   "to",
+   "I",
+   "he",
+   "she",
+   "it",
+   "was",
+   "said",
+   "we",
+   "you",
+   "my",
+   "of"
+  ],
+  "ending": "Good night!",
+  "note": "The closing 'Good night!' is a spoken farewell, shown separately from the story text and not counted for decodability."
+ },
+ "stories": [
+  {
+   "id": "cat-on-the-mat",
+   "title": "The Cat on the Mat",
+   "emoji": "🐱",
+   "level": 1,
+   "focus": "short a",
+   "target": "a",
+   "taught": [
+    "a"
+   ],
+   "questions": [
+    {
+     "q": "Who sat on the mat?",
+     "choices": [
+      {
+       "e": "🐱",
+       "t": "cat"
+      },
+      {
+       "e": "🐷",
+       "t": "pig"
+      },
+      {
+       "e": "🐸",
+       "t": "frog"
+      }
+     ],
+     "answer": 0
+    },
+    {
+     "q": "What did Sam have?",
+     "choices": [
+      {
+       "e": "🎒",
+       "t": "bag"
+      },
+      {
+       "e": "🎩",
+       "t": "hat"
+      },
+      {
+       "e": "🥄",
+       "t": "spoon"
+      }
+     ],
+     "answer": 0
+    }
+   ],
+   "pages": [
+    {
+     "scene": "🐱",
+     "text": "Pat is a tan cat. Pat has a mat. It is a flat mat."
+    },
+    {
+     "scene": "🐱🧶",
+     "text": "Pat sat on the mat. Pat sat and sat. Pat is glad."
+    },
+    {
+     "scene": "👦🎒",
+     "text": "Sam ran in. Sam has a bag. Sam is glad."
+    },
+    {
+     "scene": "👦🐱",
+     "text": "Sam sat on the mat. Sam pats Pat. Pat is a glad cat."
+    },
+    {
+     "scene": "💡",
+     "text": "Dad ran in. Dad has a lamp. The lamp is on."
+    },
+    {
+     "scene": "😴",
+     "text": "Pat naps on the mat. Sam naps on a bag. Nap, nap, nap."
+    }
+   ],
+   "words": 73
+  },
+  {
+   "id": "pip-the-pig",
+   "title": "Pip the Pig",
+   "emoji": "🐷",
+   "level": 1,
+   "focus": "short i",
+   "target": "i",
+   "taught": [
+    "a",
+    "i"
+   ],
+   "questions": [
+    {
+     "q": "Who is pink?",
+     "choices": [
+      {
+       "e": "🐷",
+       "t": "pig"
+      },
+      {
+       "e": "🐱",
+       "t": "cat"
+      },
+      {
+       "e": "🐶",
+       "t": "dog"
+      }
+     ],
+     "answer": 0
+    },
+    {
+     "q": "What did Pip dig?",
+     "choices": [
+      {
+       "e": "🕳️",
+       "t": "pit"
+      },
+      {
+       "e": "🎂",
+       "t": "cake"
+      },
+      {
+       "e": "🚪",
+       "t": "door"
+      }
+     ],
+     "answer": 0
+    },
+    {
+     "q": "What did Tip and Pip sip?",
+     "choices": [
+      {
+       "e": "🥛",
+       "t": "milk"
+      },
+      {
+       "e": "🍎",
+       "t": "apple"
+      },
+      {
+       "e": "🍞",
+       "t": "bun"
+      }
+     ],
+     "answer": 0
+    }
+   ],
+   "pages": [
+    {
+     "scene": "🐷",
+     "text": "Pip is a pig. Pip is big and pink. Pip is a glad pig."
+    },
+    {
+     "scene": "🐷🏖️",
+     "text": "Pip sits in the sand. Pip digs and digs. Pip digs a big pit."
+    },
+    {
+     "scene": "🕳️🐷",
+     "text": "Pip hid in the pit. Pip is in the pit. Pip is a bit sad."
+    },
+    {
+     "scene": "👦",
+     "text": "Tip is a kid. Tip ran to Pip. Tip said, I can fix it."
+    },
+    {
+     "scene": "🥛",
+     "text": "Tip and Pip sit in the pit. Tip sips milk. Pip sips milk."
+    },
+    {
+     "scene": "🛏️🐷",
+     "text": "Pip is in his pit. Pip had a big sip. Pip is still."
+    }
+   ],
+   "words": 83
+  },
+  {
+   "id": "red-hen",
+   "title": "The Red Hen",
+   "emoji": "🐔",
+   "level": 2,
+   "focus": "short e",
+   "target": "e",
+   "taught": [
+    "a",
+    "i",
+    "e"
+   ],
+   "questions": [
+    {
+     "q": "Who is red?",
+     "choices": [
+      {
+       "e": "🐔",
+       "t": "hen"
+      },
+      {
+       "e": "🐷",
+       "t": "pig"
+      },
+      {
+       "e": "🐱",
+       "t": "cat"
+      }
+     ],
+     "answer": 0
+    },
+    {
+     "q": "How many eggs?",
+     "choices": [
+      {
+       "e": "🔟",
+       "t": "ten"
+      },
+      {
+       "e": "3️⃣",
+       "t": "three"
+      },
+      {
+       "e": "6️⃣",
+       "t": "six"
+      }
+     ],
+     "answer": 0
+    }
+   ],
+   "pages": [
+    {
+     "scene": "🐔",
+     "text": "The red hen is in the pen. The red hen has ten eggs."
+    },
+    {
+     "scene": "🥚🐔",
+     "text": "The hen sits on ten eggs. The hen sits and sits. Peck, peck, peck."
+    },
+    {
+     "scene": "👨‍⚕️",
+     "text": "Ben is a vet. Ben gets in the pen. Ben is glad to help the hen."
+    },
+    {
+     "scene": "🛏️",
+     "text": "Ben sets a bed in the pen. The eggs sit in the bed. Ben fed the hen."
+    },
+    {
+     "scene": "🐔🥚",
+     "text": "The red hen is well. The ten eggs sit in the bed. Ben left."
+    },
+    {
+     "scene": "😴",
+     "text": "The red hen and the ten eggs rest. Ben is in his bed. Rest, rest, rest."
+    }
+   ],
+   "words": 90
+  },
+  {
+   "id": "dog-on-the-log",
+   "title": "The Dog on the Log",
+   "emoji": "🐶",
+   "level": 2,
+   "focus": "short o",
+   "target": "o",
+   "taught": [
+    "a",
+    "i",
+    "e",
+    "o"
+   ],
+   "questions": [
+    {
+     "q": "What is on the log?",
+     "choices": [
+      {
+       "e": "🐸",
+       "t": "frog"
+      },
+      {
+       "e": "🐘",
+       "t": "elephant"
+      },
+      {
+       "e": "🦊",
+       "t": "fox"
+      }
+     ],
+     "answer": 0
+    },
+    {
+     "q": "Who has a dog?",
+     "choices": [
+      {
+       "e": "👦",
+       "t": "Tom"
+      },
+      {
+       "e": "👧",
+       "t": "girl"
+      },
+      {
+       "e": "👸",
+       "t": "queen"
+      }
+     ],
+     "answer": 0
+    }
+   ],
+   "pages": [
+    {
+     "scene": "🐶",
+     "text": "Tom has a dog. The dog is Dot. Dot is a red dog."
+    },
+    {
+     "scene": "🐶🪵",
+     "text": "Dot hops on a log. Dot sits on the log. The log is big."
+    },
+    {
+     "scene": "🐸🪵",
+     "text": "A frog hops on the log. Hop, hop, hop! Dot is not mad."
+    },
+    {
+     "scene": "🐶🐸",
+     "text": "Dot and the frog sit on the log. The frog is on top. Dot is on the end."
+    },
+    {
+     "scene": "👦🐶",
+     "text": "Tom ran to Dot. Tom pats Dot. Tom pats the frog."
+    },
+    {
+     "scene": "🌫️",
+     "text": "It is not hot. Fog is on the pond. Dot naps on the log."
+    }
+   ],
+   "words": 83
+  },
+  {
+   "id": "bug-in-the-mug",
+   "title": "The Bug in the Mug",
+   "emoji": "🐛",
+   "level": 2,
+   "focus": "short u",
+   "target": "u",
+   "taught": [
+    "a",
+    "i",
+    "e",
+    "o",
+    "u"
+   ],
+   "questions": [
+    {
+     "q": "Where was the bug?",
+     "choices": [
+      {
+       "e": "☕",
+       "t": "mug"
+      },
+      {
+       "e": "🛏️",
+       "t": "bed"
+      },
+      {
+       "e": "🚌",
+       "t": "bus"
+      }
+     ],
+     "answer": 0
+    },
+    {
+     "q": "What did Gus have?",
+     "choices": [
+      {
+       "e": "🍞",
+       "t": "bun"
+      },
+      {
+       "e": "🍕",
+       "t": "pizza"
+      },
+      {
+       "e": "🐟",
+       "t": "fish"
+      }
+     ],
+     "answer": 0
+    }
+   ],
+   "pages": [
+    {
+     "scene": "🐛☕",
+     "text": "A bug sat in a mug. It is a red bug. The mug is on a rug."
+    },
+    {
+     "scene": "👦🥯",
+     "text": "Gus has a mug. Gus has a bun. Gus is glad."
+    },
+    {
+     "scene": "👦☕🐛",
+     "text": "Gus got the mug. A bug is in the mug! Gus said, A bug!"
+    },
+    {
+     "scene": "🐛💧",
+     "text": "The bug is wet. The bug is not glad. The bug is stuck in the mug."
+    },
+    {
+     "scene": "👦🐛",
+     "text": "Gus lifts the bug up. Gus sets the bug on the rug."
+    },
+    {
+     "scene": "😴🐛",
+     "text": "The bug runs and runs. Then the bug naps on the rug. Gus naps in his bed."
+    }
+   ],
+   "words": 87
+  },
+  {
+   "id": "ship-and-fish",
+   "title": "The Ship and the Fish",
+   "emoji": "🚢",
+   "level": 3,
+   "focus": "sh",
+   "target": "sh",
+   "taught": [
+    "a",
+    "i",
+    "e",
+    "o",
+    "u",
+    "sh"
+   ],
+   "questions": [
+    {
+     "q": "What did Josh have?",
+     "choices": [
+      {
+       "e": "🐚",
+       "t": "shell"
+      },
+      {
+       "e": "🍎",
+       "t": "apple"
+      },
+      {
+       "e": "🎩",
+       "t": "hat"
+      }
+     ],
+     "answer": 0
+    },
+    {
+     "q": "What swims in the pond?",
+     "choices": [
+      {
+       "e": "🐟",
+       "t": "fish"
+      },
+      {
+       "e": "🐱",
+       "t": "cat"
+      },
+      {
+       "e": "🐰",
+       "t": "rabbit"
+      }
+     ],
+     "answer": 0
+    }
+   ],
+   "pages": [
+    {
+     "scene": "🚢",
+     "text": "A big ship sits on a pond. The ship is red."
+    },
+    {
+     "scene": "🐟",
+     "text": "A fish is in the pond. The fish can swim. Swish, swish, swish."
+    },
+    {
+     "scene": "👦🚢",
+     "text": "Josh is on the ship. Josh has a net. Josh has a shell."
+    },
+    {
+     "scene": "🥅🐟",
+     "text": "Josh got a fish in the net. Josh let the fish swim."
+    },
+    {
+     "scene": "🌠",
+     "text": "Josh has a wish. Josh wishes the fish well."
+    },
+    {
+     "scene": "😴🚢",
+     "text": "The ship is still. The fish swim. Josh sits on the ship. Hush, hush, hush."
+    }
+   ],
+   "words": 73
+  },
+  {
+   "id": "chip-the-chick",
+   "title": "Chip the Chick",
+   "emoji": "🐥",
+   "level": 3,
+   "focus": "ch",
+   "target": "ch",
+   "taught": [
+    "a",
+    "i",
+    "e",
+    "o",
+    "u",
+    "sh",
+    "ch",
+    "th"
+   ],
+   "questions": [
+    {
+     "q": "Who is a chick?",
+     "choices": [
+      {
+       "e": "🐥",
+       "t": "Chip"
+      },
+      {
+       "e": "🐒",
+       "t": "Chen"
+      },
+      {
+       "e": "🐷",
+       "t": "Pip"
+      }
+     ],
+     "answer": 0
+    },
+    {
+     "q": "What did they munch?",
+     "choices": [
+      {
+       "e": "🍟",
+       "t": "chips"
+      },
+      {
+       "e": "🎂",
+       "t": "cake"
+      },
+      {
+       "e": "🌽",
+       "t": "corn"
+      }
+     ],
+     "answer": 0
+    }
+   ],
+   "pages": [
+    {
+     "scene": "🐥",
+     "text": "Chip is a chick. Chip is a red chick. Chip can chat."
+    },
+    {
+     "scene": "🐒",
+     "text": "Chen is a chimp. Chen can chat. Chip and Chen chat on a bench."
+    },
+    {
+     "scene": "🍱",
+     "text": "Chen has a lunch. It is a big lunch. Chip has a bit of the lunch."
+    },
+    {
+     "scene": "🍟",
+     "text": "Chen has chips. Chip has chips. Thick chips and thin chips."
+    },
+    {
+     "scene": "😋",
+     "text": "Chip and Chen munch and munch. Munch, munch, munch! Chip has a chip on his chin."
+    },
+    {
+     "scene": "😴🐥",
+     "text": "Chip is not up. Chen is not up. Chip and Chen nap on the bench."
+    }
+   ],
+   "words": 84
+  },
+  {
+   "id": "moon-and-spoon",
+   "title": "The Moon and the Spoon",
+   "emoji": "🌙",
+   "level": 3,
+   "focus": "oo",
+   "target": "oo",
+   "taught": [
+    "a",
+    "i",
+    "e",
+    "o",
+    "u",
+    "sh",
+    "ch",
+    "th",
+    "oo"
+   ],
+   "questions": [
+    {
+     "q": "What is on the roof?",
+     "choices": [
+      {
+       "e": "🥄",
+       "t": "spoon"
+      },
+      {
+       "e": "🐟",
+       "t": "fish"
+      },
+      {
+       "e": "🎩",
+       "t": "hat"
+      }
+     ],
+     "answer": 0
+    },
+    {
+     "q": "What is in the sky?",
+     "choices": [
+      {
+       "e": "🌙",
+       "t": "moon"
+      },
+      {
+       "e": "🚂",
+       "t": "train"
+      },
+      {
+       "e": "🪁",
+       "t": "kite"
+      }
+     ],
+     "answer": 0
+    }
+   ],
+   "pages": [
+    {
+     "scene": "🌙",
+     "text": "The moon is up. The moon is big. The moon is cool."
+    },
+    {
+     "scene": "🥄🏠",
+     "text": "A spoon sits on the roof. The moon is on the spoon."
+    },
+    {
+     "scene": "🐱🥄",
+     "text": "A cat sits on a stool. The cat has a spoon. The cat has a pot of food."
+    },
+    {
+     "scene": "🍲",
+     "text": "The food is hot. Toot, toot! The food is cool soon."
+    },
+    {
+     "scene": "🐱🌙",
+     "text": "The cat sits and sits. Soon the cat has a nap on the stool."
+    },
+    {
+     "scene": "🌙😴",
+     "text": "The moon and the spoon sit on the roof. Zoom, zoom, zoom. Soon the moon is still."
+    }
+   ],
+   "words": 84
+  },
+  {
+   "id": "cake-by-the-lake",
+   "title": "The Cake by the Lake",
+   "emoji": "🎂",
+   "level": 3,
+   "focus": "magic e",
+   "target": "a_e",
+   "taught": [
+    "a",
+    "i",
+    "e",
+    "o",
+    "u",
+    "sh",
+    "ch",
+    "th",
+    "oo",
+    "a_e",
+    "i_e",
+    "o_e",
+    "u_e"
+   ],
+   "questions": [
+    {
+     "q": "What did they bake?",
+     "choices": [
+      {
+       "e": "🎂",
+       "t": "cake"
+      },
+      {
+       "e": "🍞",
+       "t": "bun"
+      },
+      {
+       "e": "🍕",
+       "t": "pizza"
+      }
+     ],
+     "answer": 0
+    },
+    {
+     "q": "Where did they sit?",
+     "choices": [
+      {
+       "e": "🏞️",
+       "t": "lake"
+      },
+      {
+       "e": "🚌",
+       "t": "bus"
+      },
+      {
+       "e": "🏠",
+       "t": "home"
+      }
+     ],
+     "answer": 0
+    }
+   ],
+   "pages": [
+    {
+     "scene": "🎂",
+     "text": "Jake and Kate bake a cake. It is a big cake."
+    },
+    {
+     "scene": "🧑‍🍳",
+     "text": "Kate mixes. Jake bakes. The cake is hot."
+    },
+    {
+     "scene": "🏞️🎂",
+     "text": "Jake and Kate take the cake to the lake."
+    },
+    {
+     "scene": "🍰",
+     "text": "Jake and Kate sit at the lake. Jake has a slice of cake. Kate has a slice of cake."
+    },
+    {
+     "scene": "🐟💦",
+     "text": "A fish jumps in the lake. Splash! Kate and Jake smile."
+    },
+    {
+     "scene": "🌅😴",
+     "text": "The sun sets. The lake is still. Kate and Jake nap at the lake."
+    }
+   ],
+   "words": 72
+  },
+  {
+   "id": "rain-train",
+   "title": "The Rain Train",
+   "emoji": "🚂",
+   "level": 3,
+   "focus": "ai",
+   "target": "ai",
+   "taught": [
+    "a",
+    "i",
+    "e",
+    "o",
+    "u",
+    "sh",
+    "ch",
+    "th",
+    "oo",
+    "a_e",
+    "i_e",
+    "o_e",
+    "u_e",
+    "ai"
+   ],
+   "questions": [
+    {
+     "q": "Who has a snail?",
+     "choices": [
+      {
+       "e": "👧",
+       "t": "Gail"
+      },
+      {
+       "e": "👦",
+       "t": "Tom"
+      },
+      {
+       "e": "🐶",
+       "t": "Dot"
+      }
+     ],
+     "answer": 0
+    },
+    {
+     "q": "What is in the rain?",
+     "choices": [
+      {
+       "e": "🚂",
+       "t": "train"
+      },
+      {
+       "e": "🚢",
+       "t": "ship"
+      },
+      {
+       "e": "🚌",
+       "t": "bus"
+      }
+     ],
+     "answer": 0
+    }
+   ],
+   "pages": [
+    {
+     "scene": "🌧️🚂",
+     "text": "Rain, rain, rain! The train is in the rain."
+    },
+    {
+     "scene": "👧🚂",
+     "text": "Gail is on the train. Gail has a snail. The snail is in a pail."
+    },
+    {
+     "scene": "🐌🪣",
+     "text": "The snail sits in the pail. The pail sits on the train. Wait, wait, wait."
+    },
+    {
+     "scene": "🚂💨",
+     "text": "The train can zip. Chug, chug, chug! The rain taps on the train."
+    },
+    {
+     "scene": "⏰",
+     "text": "Gail and the snail wait and wait. The train is on time."
+    },
+    {
+     "scene": "🌙😴",
+     "text": "The rain is soft. The train is still. Gail and the snail nap on the train."
+    }
+   ],
+   "words": 80
+  }
+ ]
+}

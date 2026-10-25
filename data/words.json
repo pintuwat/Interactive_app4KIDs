@@ -1,0 +1,409 @@
+{
+ "_readme": "CVC words. e=emoji or 'svg:name' (assets/svg/<name>.svg). weak=true: picture is a hint only, so picture-choice games skip it. diff='o' = short o differs US/UK. f=word family (rime).",
+ "families": [
+  {
+   "id": "at",
+   "label": "-at"
+  },
+  {
+   "id": "an",
+   "label": "-an"
+  },
+  {
+   "id": "ap",
+   "label": "-ap"
+  },
+  {
+   "id": "ig",
+   "label": "-ig"
+  },
+  {
+   "id": "in",
+   "label": "-in"
+  },
+  {
+   "id": "ip",
+   "label": "-ip"
+  },
+  {
+   "id": "op",
+   "label": "-op"
+  },
+  {
+   "id": "ot",
+   "label": "-ot"
+  },
+  {
+   "id": "og",
+   "label": "-og"
+  },
+  {
+   "id": "ug",
+   "label": "-ug"
+  },
+  {
+   "id": "un",
+   "label": "-un"
+  },
+  {
+   "id": "en",
+   "label": "-en"
+  },
+  {
+   "id": "et",
+   "label": "-et"
+  },
+  {
+   "id": "ut",
+   "label": "-ut"
+  }
+ ],
+ "words": [
+  {
+   "w": "cat",
+   "e": "🐱",
+   "f": "at"
+  },
+  {
+   "w": "bat",
+   "e": "🦇",
+   "f": "at"
+  },
+  {
+   "w": "hat",
+   "e": "🎩",
+   "f": "at"
+  },
+  {
+   "w": "rat",
+   "e": "🐀",
+   "f": "at"
+  },
+  {
+   "w": "mat",
+   "e": "svg:mat",
+   "f": "at"
+  },
+  {
+   "w": "sat",
+   "e": "🧘",
+   "f": "at",
+   "weak": true
+  },
+  {
+   "w": "can",
+   "e": "🥫",
+   "f": "an"
+  },
+  {
+   "w": "man",
+   "e": "👨",
+   "f": "an"
+  },
+  {
+   "w": "pan",
+   "e": "🍳",
+   "f": "an"
+  },
+  {
+   "w": "van",
+   "e": "🚐",
+   "f": "an"
+  },
+  {
+   "w": "fan",
+   "e": "🌀",
+   "f": "an",
+   "weak": true
+  },
+  {
+   "w": "cap",
+   "e": "🧢",
+   "f": "ap"
+  },
+  {
+   "w": "map",
+   "e": "🗺️",
+   "f": "ap"
+  },
+  {
+   "w": "nap",
+   "e": "😴",
+   "f": "ap"
+  },
+  {
+   "w": "tap",
+   "e": "🚰",
+   "f": "ap"
+  },
+  {
+   "w": "zap",
+   "e": "⚡",
+   "f": "ap"
+  },
+  {
+   "w": "pig",
+   "e": "🐷",
+   "f": "ig"
+  },
+  {
+   "w": "dig",
+   "e": "⛏️",
+   "f": "ig"
+  },
+  {
+   "w": "big",
+   "e": "🐘",
+   "f": "ig",
+   "weak": true
+  },
+  {
+   "w": "wig",
+   "e": "👱",
+   "f": "ig",
+   "weak": true
+  },
+  {
+   "w": "pin",
+   "e": "📌",
+   "f": "in"
+  },
+  {
+   "w": "bin",
+   "e": "🗑️",
+   "f": "in"
+  },
+  {
+   "w": "win",
+   "e": "🏆",
+   "f": "in"
+  },
+  {
+   "w": "fin",
+   "e": "🦈",
+   "f": "in",
+   "weak": true
+  },
+  {
+   "w": "lip",
+   "e": "👄",
+   "f": "ip"
+  },
+  {
+   "w": "sip",
+   "e": "🥤",
+   "f": "ip"
+  },
+  {
+   "w": "zip",
+   "e": "🤐",
+   "f": "ip"
+  },
+  {
+   "w": "dip",
+   "e": "🥣",
+   "f": "ip",
+   "weak": true
+  },
+  {
+   "w": "hip",
+   "e": "💃",
+   "f": "ip",
+   "weak": true
+  },
+  {
+   "w": "hop",
+   "e": "🐇",
+   "f": "op",
+   "diff": "o"
+  },
+  {
+   "w": "pop",
+   "e": "🍿",
+   "f": "op",
+   "diff": "o"
+  },
+  {
+   "w": "cop",
+   "e": "👮",
+   "f": "op",
+   "diff": "o"
+  },
+  {
+   "w": "top",
+   "e": "🔝",
+   "f": "op",
+   "weak": true,
+   "diff": "o"
+  },
+  {
+   "w": "mop",
+   "e": "🧹",
+   "f": "op",
+   "weak": true,
+   "diff": "o"
+  },
+  {
+   "w": "hot",
+   "e": "🔥",
+   "f": "ot",
+   "diff": "o"
+  },
+  {
+   "w": "pot",
+   "e": "🍲",
+   "f": "ot",
+   "diff": "o"
+  },
+  {
+   "w": "dot",
+   "e": "⚫",
+   "f": "ot",
+   "diff": "o"
+  },
+  {
+   "w": "cot",
+   "e": "🛏️",
+   "f": "ot",
+   "weak": true,
+   "diff": "o"
+  },
+  {
+   "w": "dog",
+   "e": "🐶",
+   "f": "og",
+   "diff": "o"
+  },
+  {
+   "w": "log",
+   "e": "🪵",
+   "f": "og",
+   "diff": "o"
+  },
+  {
+   "w": "fog",
+   "e": "🌫️",
+   "f": "og",
+   "diff": "o"
+  },
+  {
+   "w": "hog",
+   "e": "🐗",
+   "f": "og",
+   "diff": "o"
+  },
+  {
+   "w": "jog",
+   "e": "🏃",
+   "f": "og",
+   "diff": "o"
+  },
+  {
+   "w": "bug",
+   "e": "🐛",
+   "f": "ug"
+  },
+  {
+   "w": "mug",
+   "e": "☕",
+   "f": "ug"
+  },
+  {
+   "w": "hug",
+   "e": "🤗",
+   "f": "ug"
+  },
+  {
+   "w": "jug",
+   "e": "🏺",
+   "f": "ug"
+  },
+  {
+   "w": "rug",
+   "e": "svg:rug",
+   "f": "ug"
+  },
+  {
+   "w": "sun",
+   "e": "☀️",
+   "f": "un"
+  },
+  {
+   "w": "bun",
+   "e": "🍞",
+   "f": "un"
+  },
+  {
+   "w": "run",
+   "e": "🏃‍♂️",
+   "f": "un"
+  },
+  {
+   "w": "fun",
+   "e": "🎉",
+   "f": "un",
+   "weak": true
+  },
+  {
+   "w": "hen",
+   "e": "🐔",
+   "f": "en"
+  },
+  {
+   "w": "pen",
+   "e": "🖊️",
+   "f": "en"
+  },
+  {
+   "w": "ten",
+   "e": "🔟",
+   "f": "en"
+  },
+  {
+   "w": "den",
+   "e": "🦁",
+   "f": "en",
+   "weak": true
+  },
+  {
+   "w": "net",
+   "e": "🥅",
+   "f": "et"
+  },
+  {
+   "w": "pet",
+   "e": "🐕",
+   "f": "et"
+  },
+  {
+   "w": "wet",
+   "e": "💧",
+   "f": "et"
+  },
+  {
+   "w": "jet",
+   "e": "✈️",
+   "f": "et"
+  },
+  {
+   "w": "vet",
+   "e": "🩺",
+   "f": "et"
+  },
+  {
+   "w": "cut",
+   "e": "✂️",
+   "f": "ut"
+  },
+  {
+   "w": "nut",
+   "e": "🥜",
+   "f": "ut"
+  },
+  {
+   "w": "hut",
+   "e": "🛖",
+   "f": "ut"
+  }
+ ]
+}
