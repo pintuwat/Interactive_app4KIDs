@@ -59,6 +59,12 @@ Browser voices often say letter *names* instead of *sounds* and some tablets hav
 3. **Download zip**, unzip into `audio/` (it contains `us/` or `gb/`), run `node tools/build-audio-manifest.mjs`, commit and deploy.
 Missing files fall back to the device voice in the same accent. Recording only one accent is fine.
 
+**Generated voices (already included).** `audio/us` (Kokoro voice *Heart*) and `audio/gb` (Kokoro voice *Isabella*) were made with the free, offline [Kokoro](https://github.com/hexgrad/kokoro) TTS at speed 0.85: every item from `record-audio.html`, 700 per accent. Letter sounds and names are given as phonemes in `tools/kokoro-tts.py` (`SOUND_PS`, `NAME_PS`). After adding words or stories, make only the new files (setup steps are at the top of the script):
+```bash
+~/kokoro-tts/.venv/bin/python tools/kokoro-tts.py all && node tools/build-audio-manifest.mjs
+```
+Redo some items with `… all --force sound-m word-cat`. A file you record yourself with the same name replaces the generated one.
+
 ## Tools
 | Command | What it does |
 |---|---|
@@ -67,6 +73,7 @@ Missing files fall back to the device voice in the same accent. Recording only o
 | `node tools/contrast.mjs` | WCAG colour contrast of the UI colour pairs |
 | `python3 tools/voice-check.py` | macOS: checks the US/UK voices SAY each letter sound instead of spelling it ("mmm" → "em em em") |
 | `node tools/build-audio-manifest.mjs` | lists recordings in `audio/manifest.json` |
+| `tools/kokoro-tts.py all` | generates missing audio with Kokoro TTS (see "Generated voices") |
 | `node tools/build-precache.mjs` | offline file list + cache version (the Docker build runs this) |
 | `node tools/offline-test.mjs` | real headless Chrome: installs the service worker, goes offline, checks the app |
 | `cd server && npm test` | API tests with an in-process PostgreSQL |
