@@ -10,7 +10,7 @@ export function buildItems(data, accent) {
     add('Letter sounds', `sound-${l.id}`, l.sound, `Say only the SOUND, short and clear (${l.hint})`);
     add('Letter names', `name-${l.id}`, byAccent(l.name, accent).replace(/^(.)/, (c) => c.toUpperCase()), l.kind === 'letter' ? `The letter NAME of ${l.upper}` : `Name of ${l.lower}`);
   }
-  for (const l of data.letters) for (const w of l.words) add('Words', `word-${w.w.toLowerCase()}`, w.w);
+  for (const l of data.letters) for (const w of [...l.words, { w: l.key[0] }]) add('Words', `word-${w.w.toLowerCase()}`, w.w);
   for (const w of data.words) add('Words', `word-${w.w}`, w.w);
   for (const w of data.sightwords) add('Words', `word-${w.toLowerCase()}`, w);
   for (const s of data.stories) for (const p of s.pages) for (const t of splitWords(p.text)) { const w = clean(t); if (w) add('Story words', `word-${w}`, w); }

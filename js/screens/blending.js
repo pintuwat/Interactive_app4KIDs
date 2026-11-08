@@ -3,6 +3,7 @@ import { h, pic, sleep, burst } from '../util.js';
 import { data, letterById, levelOf } from '../data.js';
 import * as progress from '../progress.js';
 import { starsFor } from '../progress.js';
+import { wordSounds, soundStyle, slashed } from '../sounds.js';
 
 export async function render(root, params, app) {
   if (!levelOf(progress.currentProfile()).words) { app.nav('/'); return; }
@@ -42,7 +43,10 @@ function blend(root, familyId, app) {
 
   function show() {
     const w = words[i];
-    lettersEl.replaceChildren(...[...w.w].map((c, k) => h('button', { class: 'blend-letter' + (k > 0 ? ' family' : ''), type: 'button', 'aria-label': `Letter ${c}`, onclick: () => { audio.sound(letterById(c)); } }, c)));
+    // each letter tile shows its sound under it, in that sound's colour: c /k/, a /a/, t /t/
+    const parts = wordSounds(w.w, audio.accent, w.sounds) || [...w.w].map((c) => ({ g: c, s: c }));
+    lettersEl.replaceChildren(...parts.map((p) => h('button', { class: 'blend-letter', type: 'button', style: soundStyle(p.s), 'aria-label': `${p.g} says ${p.s}`,
+      onclick: () => { audio.sound(letterById(p.g)); } }, h('span', {}, p.g), h('span', { class: 'bl-snd' }, slashed(p.s)))));
     wordEl.textContent = '';
     picEl.replaceChildren();
     [...dots.children].forEach((d, k) => d.classList.toggle('on', k === i));
@@ -56,7 +60,8 @@ function blend(root, familyId, app) {
     const letters = [...lettersEl.children];
     for (let k = 0; k < letters.length && alive; k++) {
       letters[k].classList.add('lit');
-      await audio.sound(letterById(w.w[k]));
+      if (audio.singleSounds) await audio.sound(letterById(w.w[k]));
+      else await sleep(450);   // single sounds off (Phase 1): the letters light up one by one, silently
       await sleep(250);
       letters[k].classList.remove('lit');
     }

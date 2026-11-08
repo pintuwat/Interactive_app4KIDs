@@ -4,6 +4,7 @@
 // All speaking functions return a Promise that always resolves (never rejects) when the sound ends or is cut off.
 
 import { data, byAccent } from './data.js';
+import { PLAY_SINGLE_SOUNDS } from './config.js';
 
 const LANG = { us: 'en-US', gb: 'en-GB' };
 const KID_RATE = 0.8;       // slow, clear speech for children
@@ -92,7 +93,16 @@ export const audio = {
   },
 
   // --- convenient wrappers: every call states the id so recordings and speech stay in sync ---
-  sound(item, o = {}) { return this.play({ id: `sound-${item.id}`, text: item.tts, rate: KID_RATE * 0.9, ...o }); },
+  /** A single letter sound. Silent while PLAY_SINGLE_SOUNDS is off (config.js). */
+  sound(item, o = {}) {
+    if (!PLAY_SINGLE_SOUNDS) return Promise.resolve();
+    return this.play({ id: `sound-${item.id}`, text: item.tts, rate: KID_RATE * 0.9, ...o });
+  },
+  /** The letter card's word: apple for a, zebra for z. */
+  keyWord(item, o = {}) { return this.word(item.key[0], o); },
+  /** "Which sound?" in games: the sound itself, or the letter card's word while single sounds are off. */
+  cue(item, o = {}) { return PLAY_SINGLE_SOUNDS ? this.sound(item, o) : this.keyWord(item, o); },
+  singleSounds: PLAY_SINGLE_SOUNDS,
   letterName(item, o = {}) { return this.play({ id: `name-${item.id}`, text: item.name, rate: KID_RATE, ...o }); },
   word(w, o = {}) { return this.play({ id: `word-${w.toLowerCase()}`, text: w, rate: KID_RATE, ...o }); },
   sight(w, o = {}) { return this.play({ id: `word-${w.toLowerCase()}`, text: w, rate: KID_RATE, ...o }); },

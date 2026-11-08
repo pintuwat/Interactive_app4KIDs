@@ -68,7 +68,7 @@ try {
   check('game works offline', await evaluate("document.querySelectorAll('.bubble').length > 0"));
   await evaluate("location.hash = '#/letter/s'; true");
   await sleep(1000);
-  check('lesson works offline', await evaluate("!!document.querySelector('.big-letter')"));
+  check('lesson works offline', await evaluate("!!document.querySelector('.letter-card') && document.querySelectorAll('.snd-bubble').length > 0"));
 } catch (e) {
   console.error('error:', e.message);
   failed++;

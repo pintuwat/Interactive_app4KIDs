@@ -18,7 +18,7 @@ export default class BubblePop extends Game {
   }
 
   renderRound(round, area) {
-    const say = () => this.audio.sound(round.letter);
+    const say = () => this.audio.cue(round.letter);   // the sound, or (single sounds off) its word: apple for a
     const sky = h('div', { class: 'sky' });
     this.sky = sky;
     this.round = round;
@@ -71,6 +71,6 @@ export default class BubblePop extends Game {
   reveal(round) {
     const t = [...this.sky.querySelectorAll('.bubble')].find((b) => b.dataset.id === round.letter.id);
     if (t) { t.style.outline = '6px solid #ffc93c'; t.classList.add('pulse'); }
-    this.audio.sound(round.letter);
+    this.audio.cue(round.letter);
   }
 }

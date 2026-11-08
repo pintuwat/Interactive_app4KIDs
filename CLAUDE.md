@@ -28,6 +28,7 @@ Status: Phases 1, 2 and 3 are built. See README.md for the feature list and layo
 ## Conventions
 - Stories are written in `tools/stories-source.py` (generates `data/stories.json`). Every non-sight word must pass `node tools/check-stories.mjs` for the sounds listed in that story's `taught`. Base sight words: the, a, is, on, in, and, to, I, he, she, it, was, said, we, you, my, of; stories 11-20 may add a few Dolch words in `extraSight`. "Good night!" is spoken separately, not part of the text.
 - Levels (`data/levels.json`): 1 = letters/sounds, 2 = + CVC blending, 3 = + digraphs, blends, long vowels, sight words, all stories; 'all' is the default.
+- Single letter sounds are OFF in Phase 1 (`PLAY_SINGLE_SOUNDS` in `js/config.js`): children SEE sounds (/z/ on letter cards, sound bubbles under words, `js/sounds.js`) and HEAR whole words only. Use `audio.cue(item)` where a game needs "the sound" (plays the key word while off). One colour per SOUND, from `soundStyle()`.
 - Audio ids: `sound-<letter>`, `name-<letter>`, `word-<word>` (also sight words and story words), `prompt-<key>`, `story-<id>-<page>`, `story-<id>-q<n>`. The recorder (`record-audio.html`) lists them all (`js/recorder/items.js`).
 - Phase 2 API (`server/`): plain SQL migrations in `server/migrations`, parameterized queries only, every teacher query scoped by teacher_id, student tokens only touch their own progress. Tests: `cd server && npm test`.
 - The site works without the API (guest mode). `env.js` (written by the container from `API_URL`) turns class sync on.

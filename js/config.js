@@ -5,4 +5,9 @@ export const config = {
   apiUrl: (window.KIDS_CONFIG && window.KIDS_CONFIG.apiUrl) || '',
 };
 
+// Single letter sounds (/s/, /m/ on their own). OFF in Phase 1: the generated sounds are not good enough yet, so
+// letter cards show the sound written (/s/) and only whole words play. Set to true in Phase 2 (better or recorded
+// sounds): the sound buttons, "sound it out" and the sounds in blending and games come back.
+export const PLAY_SINGLE_SOUNDS = false;
+
 export const cloudConfigured = () => !!config.apiUrl;

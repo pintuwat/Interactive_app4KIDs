@@ -33,6 +33,6 @@ export default class BeginningSound extends Game {
 
   reveal(round) {
     this.btns.find((b) => b.dataset.id === round.letter.id)?.classList.add('reveal');
-    this.audio.sound(round.letter);
+    if (this.audio.singleSounds) this.audio.sound(round.letter); else this.audio.word(round.target.w);
   }
 }

@@ -44,6 +44,44 @@ function parse(w, vowels, graphemes, atStart) {
   return false;
 }
 
+// Sounds a word can be split into for "sound it out" (ids of data/letters.json), longest first.
+const SEGMENTS = ['sh', 'ch', 'th', 'ck', 'ai', 'ee', 'oa', 'oo', 'qu', ...[...'bdfglmnprstz'].map((c) => c + c)];
+const SEGMENT_ID = { qu: 'q' }; // a doubled letter (ll, ss, gg ...) is one sound: its letter
+
+/**
+ * Split a one-syllable phonics word into its sounds: 'ant' -> [{g:'a',id:'a'}, {g:'n',id:'n'}, {g:'t',id:'t'}].
+ * Magic e: 'cake' -> c, a (id a_e), k, e (id null = silent). Returns null when the word cannot be sounded out
+ * with the course's sounds (two syllables, ar/or/ow, silent letters, ...), so no button is shown for it.
+ * accent matters for long u: tube is /tuːb/ in American, /tjuːb/ in British.
+ */
+export function segment(word, accent = 'us') {
+  const w = clean(word);
+  // vowel + r (door, star), all (ball), wa/wo (watch, wolf) are not the taught vowel sounds
+  if (/[aeiou]r/.test(w) || /all/.test(w) || /w[ao]/.test(w)) return null;
+  const magic = new RegExp(`^(.*)([aiou])(${C})e$`).exec(w);
+  const body = magic ? magic[1] : w;
+  const parts = [];
+  for (let k = 0; k < body.length;) {
+    const g = SEGMENTS.find((s) => body.startsWith(s, k)) || body[k];
+    const vowel = 'aeiou'.includes(g[0]) && g !== 'qu';
+    if (vowel && g.length === 1 && 'aeiouwyr'.includes(body[k + 1] || '-')) return null;
+    if (vowel && g.length === 1 && k + 1 === body.length && !magic) return null; // final a/o: not a short vowel
+    if (g === 'y' && k > 0) return null;
+    if (body.startsWith('mb', k) || body.startsWith('kn', k) || body.startsWith('wr', k) || body.startsWith('ng', k)) return null;
+    parts.push({ g, id: SEGMENT_ID[g] || (g.length === 2 && g[0] === g[1] && !vowel ? g[0] : g), vowel });
+    k += g.length;
+  }
+  if (magic) {
+    const [, before, v, c] = magic;
+    const last = before.slice(-1);
+    // long u says "oo" after r, l, j (rule, June), and in American also after t, d, n, s (tube)
+    const u = v === 'u' && ('rlj'.includes(last) || (accent === 'us' && 'tdns'.includes(last))) ? 'oo' : `${v}_e`;
+    parts.push({ g: v, id: u, vowel: true }, { g: c, id: c === 's' ? 'z' : c }, { g: 'e', id: null }); // nose: s says z
+  }
+  if (parts.filter((p) => p.vowel).length !== 1) return null;
+  return parts.map(({ g, id }) => ({ g, id }));
+}
+
 /** Does a (decodable, non-sight) word contain the story's target sound? target may be 'ir|ur|er'. */
 export function isTarget(word, target) {
   const w = clean(word);

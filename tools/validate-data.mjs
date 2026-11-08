@@ -16,7 +16,18 @@ for (const l of letters.items) {
   if (!l.tts || !l.name || !l.sound || !l.hint) err(`letter ${l.id}: missing tts/name/sound/hint`);
   if (l.words.length !== 3) err(`letter ${l.id}: needs exactly 3 sample words`);
   for (const [w, e] of l.words) if (!w || !e) err(`letter ${l.id}: bad word entry`);
+  if (!Array.isArray(l.key) || !l.key[0] || !l.key[1]) err(`letter ${l.id}: needs key = [word, emoji] for its letter card`);
 }
+// Every lesson word must split into sounds (cards show them as bubbles): hand-written sounds must spell the word.
+const { segment } = await import('../js/phonics.js');
+for (const l of letters.items) for (const [w, , f] of l.words) {
+  for (const accent of ['us', 'gb']) {
+    const list = Array.isArray(f?.sounds) ? f.sounds : f?.sounds?.[accent];
+    if (list) { if (list.map((t) => t.split('=')[0]).join('') !== w) err(`word ${w}: sounds ${list.join(' ')} do not spell it`); }
+    else if (!segment(w, accent)) err(`word ${w} (${accent}): cannot be split into sounds, add flags.sounds`);
+  }
+}
+for (const w of words.words) if (!segment(w.w)) err(`CVC word ${w.w} cannot be split into sounds`);
 const fam = new Set(words.families.map((f) => f.id));
 if (words.words.length < 60) err(`only ${words.words.length} CVC words (need 60+)`);
 for (const w of words.words) {

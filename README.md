@@ -17,7 +17,7 @@ Open http://localhost:8080 and create a child profile. (Offline mode is off on l
 ## What is inside
 | Area | What the child does |
 |---|---|
-| **Letters** | "Start here" path in the teaching order (s a t p i n …) plus an A–Z grid. Each lesson: big letter (tap = name), sound button (tap = /sound/), 3 picture words, US/UK compare button, finger tracing. |
+| **Letters** | "Start here" path in the teaching order (s a t p i n …) plus an A–Z grid of letter cards. A **letter card** shows the key-word picture, the sound written big (/z/) and the letter small (Zz); tapping plays the word (zebra). Each lesson: the letter card, 3 picture words with **sound bubbles** (/k/ /a/ /t/), US/UK compare button, finger tracing. Every sound has one colour everywhere (c, k and ck are all the same /k/ colour). |
 | **Words** | 14 word families (‑at ‑an ‑ap ‑ig ‑in ‑ip ‑op ‑ot ‑og ‑ug ‑un ‑ut ‑en ‑et), 64 CVC words. Letters light up one by one with their sound, then the whole word and picture. Level 3: 40 Dolch sight words. |
 | **Games** | Listen & Tap, First Sound, Bubble Pop, Build the Word (drag or tap), Rhyme Match, Sight Words. 6 rounds, max 2 tries then the answer is shown; always 1–3 stars, never a "lose" screen. Uses only letters the child has unlocked. |
 | **Stories** | 20 decodable stories (10 for ages 3–6, 10 for ages 7–8) in a night theme: "Read to me" with word-by-word highlighting, or "I read" (tap each word). Target sounds in colour, 2–3 picture questions, a calm "Good night!" ending. |
@@ -26,6 +26,8 @@ Open http://localhost:8080 and create a child profile. (Offline mode is off on l
 
 **Levels** (Parent corner): Level 1 (age 3–4) letters & sounds · Level 2 (5–6) CVC blending · Level 3 (7–8) digraphs, blends, magic e, long vowels, sight words, all stories · All (default).
 
+**Single letter sounds are switched off (Phase 1).** Generated sounds like /z/ on their own did not sound right, so only whole words play and the sounds are shown in writing. `PLAY_SINGLE_SOUNDS` in `js/config.js` turns them back on (sound button, sound-it-out, blending and game sounds); the files in `audio/*/sound-*.mp3` are kept.
+
 ## Project layout
 ```
 index.html            the app (hash routes: #/letters, #/letter/s, #/blend/at, #/game/bubble-pop, #/story/rain-train …)
@@ -33,6 +35,7 @@ teacher.html          teacher dashboard (Phase 2)        privacy.html   privacy 
 record-audio.html     record your own audio (Phase 3)
 css/                  style.css, print.css (worksheets), teacher.css
 js/app.js             shell        router.js  hash router         audio.js  ALL sound (recorded → speech)
+js/sounds.js          /sound/ labels, one colour per sound, sound bubbles, letter cards
 js/progress.js        ALL progress (one module)   storage/local.js + storage/api.js (class sync)
 js/phonics.js         decodability rules (shared with tools)       data.js  loads /data
 js/screens/           one module per screen          js/games/  one module per game + game-base.js
@@ -45,6 +48,7 @@ tools/                build + check scripts (see below)
 ## Editing content
 All lesson content is JSON in `/data`; no content is hard-coded in the UI.
 - **Letters / sounds**: `data/letters.json` (`tts` is the spelling the device voice says for the sound, e.g. `"hmm"` for /m/, `"buh"` for /b/). Never use repeated letters like `mmm`/`sss`: voices read them as letter names. After changing one, run `python3 tools/voice-check.py` on a Mac; better still, record real audio. US/UK differences use `{ "us": …, "gb": … }` (e.g. Z = zee/zed) and words flagged `"diff"`.
+- **Letter cards**: `key` in `data/letters.json` = the word and picture on the card. **Sound bubbles** come from the phonics rules (`segment()` in `js/phonics.js`); for words they cannot split (apple, alligator) write `"sounds": ["a", "pp=p", "le=l"]` in the word's flags (`"g=s"` says /s/, `"g="` is silent, `{us, gb}` when the accents differ). `node tools/validate-data.mjs` checks every word splits and is spelled right.
 - **Words**: `data/words.json`. **Spoken instructions**: `data/prompts.json` (max 6 words).
 - **Stories**: edit `tools/stories-source.py`, then
   ```bash
@@ -59,7 +63,7 @@ Browser voices often say letter *names* instead of *sounds* and some tablets hav
 3. **Download zip**, unzip into `audio/` (it contains `us/` or `gb/`), run `node tools/build-audio-manifest.mjs`, commit and deploy.
 Missing files fall back to the device voice in the same accent. Recording only one accent is fine.
 
-**Generated voices (already included).** `audio/us` (Kokoro voice *Heart*) and `audio/gb` (Kokoro voice *Isabella*) were made with the free, offline [Kokoro](https://github.com/hexgrad/kokoro) TTS at speed 0.85: every item from `record-audio.html`, 700 per accent. Letter sounds and names are given as phonemes in `tools/kokoro-tts.py` (`SOUND_PS`, `NAME_PS`). After adding words or stories, make only the new files (setup steps are at the top of the script):
+**Generated voices (already included).** `audio/us` (Kokoro voice *Heart*) and `audio/gb` (Kokoro voice *Isabella*) were made with the free, offline [Kokoro](https://github.com/hexgrad/kokoro) TTS at speed 0.85: every item from `record-audio.html`, 700 per accent. Letter sounds and names are given as phonemes in `tools/kokoro-tts.py` (`SOUND_PS`, `NAME_PS`). Said alone, Kokoro adds a vowel to consonants ("s-uh-s"), so consonant sounds are cut out of a short word (`SOUND_CUT`: the hiss of "as", the puff of "top") and held sounds (sss, mmm) are lengthened; `… kokoro-tts.py check` shows each sound as voice (V) and hiss (n). After adding words or stories, make only the new files (setup steps are at the top of the script):
 ```bash
 ~/kokoro-tts/.venv/bin/python tools/kokoro-tts.py all && node tools/build-audio-manifest.mjs
 ```

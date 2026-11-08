@@ -2,11 +2,14 @@ import { h } from '../util.js';
 import { data, alphabet, pathLetters, extraLetters, levelOf } from '../data.js';
 import { currentProfile, starsFor } from '../progress.js';
 import { t } from '../i18n.js';
+import { soundLabel, soundStyle, letterCardParts } from '../sounds.js';
 
 function tile(l, nextId) {
   const s = starsFor('letter', l.id);
-  return h('a', { class: 'letter-tile' + (s ? ' done' : '') + (l.id === nextId ? ' next' : ''), href: `#/letter/${l.id}`, 'aria-label': `${l.lower}. ${s} stars.` },
-    l.kind === 'letter' ? [l.upper + l.lower] : l.lower,
+  // A small letter card: picture, /sound/, letter. Tapping opens the lesson.
+  return h('a', { class: 'letter-tile' + (s ? ' done' : '') + (l.id === nextId ? ' next' : ''), href: `#/letter/${l.id}`,
+    style: soundStyle(soundLabel(l.id)), 'aria-label': `${l.lower} says ${soundLabel(l.id)}, like ${l.key[0]}. ${s} stars.` },
+    letterCardParts(l, { word: false }),
     h('span', { class: 'st', 'aria-hidden': 'true' }, '⭐'.repeat(s)));
 }
 
